@@ -9,3 +9,6 @@
 - historia zeskanowanych produktów
 ### blogi
 - blogi
+
+##  Budowa Serwera
+<img src="Budowa Projektu.gv.svg">

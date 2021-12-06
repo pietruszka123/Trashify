@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test1": "npx tailwindcss -i test.css -o ./dist/test.css"
+    "tailwind": "npx tailwindcss -i test.css -o ./dist/test.css",
+    "runNode": "node node/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/pietruszka123/Konkurs4#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "nodemon": "^2.0.15",
+    "qr-scanner": "^1.3.0",
     "tailwindcss": "^2.2.19"
   }
 }
