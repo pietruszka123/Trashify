@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css.css">
-    <link rel="stylesheet" href="style.css">
     <title>Recycling Duter</title>
 </head>
 
@@ -105,26 +104,32 @@
             </g>
         </svg>
         <!-- switch mode -->
-        <style>
-            input[type="Checkbox"] {
-                -webkit-appearance: none;
-                visibility: hidden;
-                display: block;
-            }
-            input[type="Checkbox"]:checked ~ span{
-
-            }
-        </style>
-        <label>
-            <input type="checkbox" class="appearance-none invisible block">
-            <span class="relative block w-10 h-5 bg-gray-100 cursor-pointer rounded-2xl overflow-hidden 0.5s:ease-in"></span>
-        </label>
+        
+        
 
     </header>
+    <style>
+            input[type="Checkbox"]:checked {
+                background: #03a9f4;
+            }
+            input[type="Checkbox"]:before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                top: 0;
+                left: 0;
+                background: white;
+            }
+        </style>
     <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
 
     <div class="h-screen w-90% pt-20 p-10 bg-gray-800 text-gray-200 flex items-center justify-center">
-
+    <label>
+            <input type="checkbox" class="appearance-none invisible block ">
+            <span class="relative block w-20 h-10 bg-blue-200 cursor-pointer rounded-3xl overflow-hidden" style="transition: ease-in 0.5s;"></span>
+        </label>
 
 
     </div>

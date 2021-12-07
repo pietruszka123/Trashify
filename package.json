@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind": "npx tailwindcss -i test.css -o ./dist/test.css",
-    "runNode": "node node/index.js"
+    "runNode": "node node/index.js",
+    "build-css": "tailwind build css/styles.css -o public/styles.css"
   },
   "repository": {
     "type": "git",
