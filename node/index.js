@@ -7,7 +7,7 @@ var app = express();
 var server = app.listen(8080, function () {
   console.log("Dziala");
 });
-app.use("/", express.static("node/public"));
+app.use("/api", express.static("node/public"));
 
 // app.use("*.php", function (request, response, next) {
 //   php.parseFile(request.baseUrl, request.url.replace(`/?`, ""), function (phpResult) {
