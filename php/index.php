@@ -66,27 +66,33 @@
         </svg> -->
 
         <!-- nav bar -->
-        <nav class="block relative w-max bg-transparent z-10 ">
+        <nav class="block relative w-max bg-transparent z-10 ml-auto mr-5 ">
             <div class="openMenu"><i class="fa fa-bars dark:text-white "></i></div>
-            <ul class="mainMenu bg-custom2 border-4 border-white m-3 rounded-2xl dark:bg-gray-800 bg-g1">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-
+            <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-800 bg-g1 flex flex-wrap gap-4">
                 <!-- darkmode switch -->
-
-                <div class="closeMenu z-10 ">
+                <div class="flex flex-row">
+                <button class=" mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
+                       <div id="switch-toggle" class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-pink-300 -translate-x-2 p-1 text-white ">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                           </svg>
+                       </div>
+                   </button>
+                <div class="closeMenu z-10 flex justify-self-end">
                    
-                    <i class="fa fa-times"></i>
+                   <i class="fa fa-times"></i>
+               </div>
                 </div>
-                <button class="absolute top-8 right-14 w-12 h-6 md:w-12 md:h-6 rounded-2xl bg-white flex justiy-left items-center transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
-                        <div id="switch-toggle" class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-pink-300 -translate-x-2 p-1 text-white ">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                        </div>
-                    </button>
+                <li class="flex justify-center "><a href="#" class="w-11/12 text-center">Home</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="#" class="w-11/12 text-center">Mapa</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="#" class=" w-11/12 text-center">Blog</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="#" class=" w-11/12 text-center">Info</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="#" class=" w-11/12 text-center">Twórcy</a></li>
+                <li class="flex justify-center mt-4 rounded-3xl"><a href="#" class=" w-11/12 text-center">wyloguj</a></li>
+                
+               
+
+                
                 <script src="darkmode.js"></script>
             </ul>
         </nav>
@@ -134,24 +140,21 @@
 
         <script src="jakis.js"></script>
 
-
-
-
     </header>
     <!-- gradientowa linia -->
     <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
 
+
+
     <!-- container -->
-    <div class="justify-between h-screen w-90% p-5 dark:bg-gray-800  text-pink-300 bg-blue-400 dark:text-gray-200 flex container">
-
-
+    <div class=" justify-around h-screen w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap gap-0">
 
         <!-- Historia -->
-        <div class="dark:bg-gray-700  border-4 border-solid rounded-2xl border-green-100 w-40 h-72">
+        <div class="dark:bg-gray-700  border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-40 h-72">
 
         </div>
         <!-- skaner -->
-        <div class="w-20 h-20 dark:bg-gray-700 bg-gradient-to-tl from-g1 via-g3 rounded-2xl to-g6 border-4 border-solid border-green-100">
+        <div class="w-28 h-28 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
 
         </div>
     </div>

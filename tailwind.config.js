@@ -16,7 +16,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
     custom:'#968AB6',/* #E8D5B5 */
-    custome:'#7AB4C0',
+    g0:'#AEA9BA',
     g1:'#3730A3',
     g2:'#AD2395',
     g3:'#EE3F78',
