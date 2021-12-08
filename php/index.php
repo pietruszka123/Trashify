@@ -56,7 +56,7 @@
         </svg>
 
         <h1 class="text-2xl py-0.5 float-left">Trash dooter</h1>
-<!-- 
+        <!-- 
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 80 80" class="h-16 w-16 py-1 yin">
             <circle r="39" fill="#fff" />
@@ -66,9 +66,9 @@
         </svg> -->
 
         <!-- nav bar -->
-        <nav class="block relative w-max bg-transparent z-10">
-            <div class="openMenu"><i class="fa fa-bars dark:text-white"></i></div>
-            <ul class="mainMenu bg-custom2 border-4 border-white m-3 rounded-2xl">
+        <nav class="block relative w-max bg-transparent z-10 ">
+            <div class="openMenu"><i class="fa fa-bars dark:text-white "></i></div>
+            <ul class="mainMenu bg-custom2 border-4 border-white m-3 rounded-2xl dark:bg-gray-800 bg-g1">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Contact</a></li>
@@ -76,9 +76,18 @@
 
                 <!-- darkmode switch -->
 
-                <div class="closeMenu z-10"><i class="fa fa-times"></i></div>
-
-                
+                <div class="closeMenu z-10 ">
+                   
+                    <i class="fa fa-times"></i>
+                </div>
+                <button class="absolute top-8 right-14 w-12 h-6 md:w-12 md:h-6 rounded-2xl bg-white flex justiy-left items-center transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
+                        <div id="switch-toggle" class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-pink-300 -translate-x-2 p-1 text-white ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                    </button>
+                <script src="darkmode.js"></script>
             </ul>
         </nav>
         <!-- paprotka -->
