@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
 
     <title>Recycling Duter</title>
+    <script src="./barcodeScanner.js"></script>
 </head>
 
 <body class="p-0 m-0 min-h-screen">
@@ -147,7 +148,7 @@
         </div>
         <!-- skaner -->
         <div class="w-28 h-28 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
-
+            <video id="video" class="fill-current h-full"></video>
         </div>
     </div>
 
@@ -161,7 +162,7 @@
         </span>
 
     </footer>
-
+    <script src="scanner.js"></script>
     <script src="index.js"></script>
 </body>
 
