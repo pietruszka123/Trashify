@@ -11,8 +11,8 @@
     <title>Recycling Duter</title>
 </head>
 
-<body class="p-0 m-0 min-h-screen">
-    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-90% items-center flex gap-2 pl-5">
+<body class="p-0 m-0 h-screen max-h-screen overflow-hidden">
+    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-90% items-center flex gap-2 pl-5 overflow-hidden">
         <!-- paprotka -->
         <svg class="h-16 w-16 " style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
@@ -68,7 +68,7 @@
         <!-- nav bar -->
         <nav class="block relative w-max bg-transparent z-10 ml-auto mr-5 ">
             <div class="openMenu"><i class="fa fa-bars dark:text-white "></i></div>
-            <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 pb-4 flex flex-wrap gap-2 gapp">
+            <ul class="mainMenu m-3 rounded-2xl dark:bg-transparent bg-g1 pb-4 flex flex-wrap gap-2 gapp">
                 <!-- darkmode switch -->
                 <div class="flex flex-row">
                 <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
@@ -145,28 +145,13 @@
 
 
     <!-- container -->
-    <div class=" justify-around h-screen w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap gap-0">
+    <div class=" justify-around h-full w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap gap-0">
 
-        <!-- Historia -->
-        <div class="dark:bg-gray-700  border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-40 h-72">
-
-        </div>
-        <!-- skaner -->
-        <div class="w-28 h-28 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
-
-        </div>
+        
     </div>
 
     <!-- stopka -->
-    <footer class="relative bottom-0 h-32 dark:text-gray-100 text-pink-300 bg-indigo-800 dark:bg-gray-900 flex justify-center align-bottom">
-        <span class="gap-2 absolute bottom-3">
-            <a href="">O recyklingu </a>|
-            <a href="">Artykóły </a>|
-            <a href="">Autorzy </a>|
-            <a href="">Blog </a>
-        </span>
 
-    </footer>
 
     <script src="index.js"></script>
 </body>
