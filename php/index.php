@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
     <title>Recycling Duter</title>
 </head>
 
 <body class="p-0 m-0 bg-gray-800 min-h-screen">
-    <header class="bg-gray-900 h-16 w-90% items-center flex gap-2">
+    <header class="bg-gray-900 h-16 w-90% items-center flex gap-2 pl-5">
         <!-- paprotka -->
         <svg class="h-16 w-16 " style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
@@ -53,17 +55,31 @@
             </g>
         </svg>
 
-        <h1 class="text-green-100 text-center text-2xl py-0.5 float-left">Recykler twojej starej</h1>
-
-        <!-- Yin Yan -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 80 80" class="h-16 w-16 py-1">
+        <h1 class="text-green-100 text-2xl py-0.5 float-left">Trash dooter</h1>
+<!-- 
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 80 80" class="h-16 w-16 py-1 yin">
             <circle r="39" fill="#fff" />
             <path fill="#4bb748" d="M0,38a38,38 0 0 1 0,-76a19,19 0 0 1 0,38a19,19 0 0 0 0,38" />
             <circle r="5" cy="19" fill="#4bb748" />
             <circle r="5" cy="-19" fill="#fff" />
-        </svg>
+        </svg> -->
+
+        <!-- nav bar -->
+        <nav class="block relative w-max bg-transparent z-10">
+            <div class="openMenu"><i class="fa fa-bars"></i></div>
+            <ul class="mainMenu bg-gray-900 h-16">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <div class="closeMenu"><i class="fa fa-times"></i></div>
+
+                
+            </ul>
+        </nav>
         <!-- paprotka -->
-        <svg class="h-16 w-16 " viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <svg class="h-16 w-16 absolute right-0 z-0" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
                 <g transform="matrix(4.16667,0,0,4.16667,-606.319,-813.773)">
                     <path d="M263.6,266C266.4,264.7 268.4,262 268.6,258.7C268.9,253.9 265.2,251.2 260.5,250.9C257.1,250.7 252.9,253.5 250.2,255.2C240.6,261.4 233.1,263 227.9,264.1C226,264.5 224.1,264.9 222.1,264.9C222.2,265 248,274.4 263.6,266Z" style="fill:#f472b6;fill-rule:nonzero;" />
@@ -104,6 +120,7 @@
             </g>
         </svg>
 
+        <script src="jakis.js"></script>
 
 
 
@@ -113,20 +130,30 @@
     <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
 
     <!-- container -->
-    <div class=" justify-between h-screen w-90% p-5 bg-gray-800 text-gray-200 flex container">
+    <div class="dark justify-between h-screen w-90% p-5 dark:bg-gray-800 dark:text-gray-200 flex container">
+
+
 
         <!-- Historia -->
-        <div class="bg-gray-700 border border-solid border-green-100 w-40 h-72">
+        <div class="dark:bg-gray-700 border border-solid border-green-100 w-40 h-72">
 
         </div>
         <!-- skaner -->
-        <div class="w-20 h-20 bg-gray-700 border border-solid border-green-100">
+        <div class="w-20 h-20 dark:bg-gray-700 border border-solid border-green-100">
 
         </div>
     </div>
 
     <!-- stopka -->
-    <footer class="relative bottom-0 h-64 text-gray-100 bg-gray-900"></footer>
+    <footer class="relative bottom-0 h-32 text-gray-100 bg-gray-900 flex justify-center align-bottom">
+        <span class="gap-2 absolute bottom-3">
+            <a href="">O recyklingu </a>|
+            <a href="">Artykóły </a>|
+            <a href="">Autorzy </a>|
+            <a href="">Blog </a>
+        </span>
+
+    </footer>
 
 
 </body>
