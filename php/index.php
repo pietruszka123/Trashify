@@ -11,8 +11,8 @@
     <title>Recycling Duter</title>
 </head>
 
-<body class="p-0 m-0 bg-gray-800 min-h-screen">
-    <header class="bg-gray-900 h-16 w-90% items-center flex gap-2 pl-5">
+<body class="p-0 m-0 min-h-screen">
+    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-90% items-center flex gap-2 pl-5">
         <!-- paprotka -->
         <svg class="h-16 w-16 " style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
@@ -55,7 +55,7 @@
             </g>
         </svg>
 
-        <h1 class="text-green-100 text-2xl py-0.5 float-left">Trash dooter</h1>
+        <h1 class="text-2xl py-0.5 float-left">Trash dooter</h1>
 <!-- 
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 80 80" class="h-16 w-16 py-1 yin">
@@ -67,13 +67,16 @@
 
         <!-- nav bar -->
         <nav class="block relative w-max bg-transparent z-10">
-            <div class="openMenu"><i class="fa fa-bars"></i></div>
-            <ul class="mainMenu bg-gray-900 h-16">
+            <div class="openMenu"><i class="fa fa-bars dark:text-white"></i></div>
+            <ul class="mainMenu bg-custom2 border-4 border-white m-3 rounded-2xl">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">About</a></li>
-                <div class="closeMenu"><i class="fa fa-times"></i></div>
+
+                <!-- darkmode switch -->
+
+                <div class="closeMenu z-10"><i class="fa fa-times"></i></div>
 
                 
             </ul>
@@ -130,22 +133,22 @@
     <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
 
     <!-- container -->
-    <div class="dark justify-between h-screen w-90% p-5 dark:bg-gray-800 dark:text-gray-200 flex container">
+    <div class="justify-between h-screen w-90% p-5 dark:bg-gray-800  text-pink-300 bg-blue-400 dark:text-gray-200 flex container">
 
 
 
         <!-- Historia -->
-        <div class="dark:bg-gray-700 border border-solid border-green-100 w-40 h-72">
+        <div class="dark:bg-gray-700  border-4 border-solid rounded-2xl border-green-100 w-40 h-72">
 
         </div>
         <!-- skaner -->
-        <div class="w-20 h-20 dark:bg-gray-700 border border-solid border-green-100">
+        <div class="w-20 h-20 dark:bg-gray-700 bg-gradient-to-tl from-g1 via-g3 rounded-2xl to-g6 border-4 border-solid border-green-100">
 
         </div>
     </div>
 
     <!-- stopka -->
-    <footer class="relative bottom-0 h-32 text-gray-100 bg-gray-900 flex justify-center align-bottom">
+    <footer class="relative bottom-0 h-32 dark:text-gray-100 text-pink-300 bg-indigo-800 dark:bg-gray-900 flex justify-center align-bottom">
         <span class="gap-2 absolute bottom-3">
             <a href="">O recyklingu </a>|
             <a href="">Artykóły </a>|
