@@ -9,7 +9,7 @@ require_once("header.php");
 <div class=" justify-center min-h-screen h-full w-screen gap-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap p-4">
     <!-- skaner -->
     <div class=" w-72 h-72 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
-        <video id="video" class="fill-current h-full"></video>
+        <video id="video" class="fill-current h-full transform-mirror"></video>
         <input type="checkbox" value="Start" id="startvideo">
         <select id="sourceSelect" hidden>
         </select>
