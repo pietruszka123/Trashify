@@ -3,9 +3,10 @@
 $mysqli = new mysqli('localhost', 'root', '', 'smietnik');
 
 $sql = "INSERT INTO products(`productCode`, `productInfo`) VALUES (?, ?)";
-var_dump($_POST);
+$data = json_decode(file_get_contents('php://input'), true);
+//var_dump($data);
 if ($stmt = $mysqli->prepare($sql)) {
-    $stmt->bind_param("ss", $productCode, $productInfo);
+    $stmt->bind_param("ss", $data["code"], $data["product"]["abbreviated_product_name"]);
     if ($stmt->execute()) {
         echo '{status:1}';
         $mysqli->close();
@@ -13,4 +14,4 @@ if ($stmt = $mysqli->prepare($sql)) {
     }
 }
 $mysqli->close();
-echo '{status:1}';
+echo '{status:0}';

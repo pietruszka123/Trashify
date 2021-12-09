@@ -4,6 +4,7 @@ Post http://localhost/apiv2.1.3.7/inserter.php
 Content-Type: application/json
 
 {
+    "code": "3502110009357",
   "product": {
     "abbreviated_product_name": "Pepsi max pet 1.5l",
     "brands": "Pepsi,Diet pepsi,بيبسي ماكس",
