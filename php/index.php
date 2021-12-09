@@ -13,7 +13,7 @@
 </head>
 
 <body class="p-0 m-0 min-h-screen">
-    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-90% items-center flex gap-2 pl-5">
+    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-90% items-center overflow-hidden flex gap-2 pl-5">
         <!-- paprotka -->
         <svg class="h-16 w-16 " style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
