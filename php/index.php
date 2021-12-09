@@ -85,7 +85,7 @@
                </div>
                 </div>
              
-                <li class="flex justify-center rounded-3xl"><a href="Homepage.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 dark:hover:text-white  bg-pink-400">Home</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 dark:hover:text-white  bg-pink-400">Home</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Mapa</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Blog</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Info</a></li>
