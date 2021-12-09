@@ -69,7 +69,7 @@
         <!-- nav bar -->
         <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 mr-5 ">
             <div class="openMenu"><i class="fa fa-bars dark:text-white "></i></div>
-            <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap gap-2">
+            <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap gap-2 px-2">
                 <!-- darkmode switch -->
                 <div class="flex flex-row">
                     <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl mr-3 bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
 
-                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 dark:hover:text-white  bg-pink-400">Home</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 dark:hover:text-white  bg-pink-400 dark:bg-blue-500">Home</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Mapa</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Blog</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Info</a></li>
@@ -146,21 +146,16 @@
 
 
 
+
     <!-- container -->
-    <div class=" justify-around h-screen w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300 pl-0 dark:text-gray-200 flex flex-wrap gap-0">
-
-        <!-- Historia -->
-        <div class="dark:bg-gray-700  border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-40 h-72">
-
-        </div>
+    <div class=" justify-center min-h-screen h-full w-screen gap-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap p-4">
         <!-- skaner -->
-        <div class="w-28 h-28 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
+        <div class=" w-72 h-72 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
             <video id="video" class="fill-current h-full"></video>
-            <input type="checkbox" value="Start" id="startvideo">
-            <select id="sourceSelect" hidden>
-            </select>
-            <input type="text" id="codeInput">
-            <input type="button" value="prześlij" id="submit">
+        </div>
+        <!-- Historia -->
+        <div class="dark:bg-gray-700  border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-72 h-80">
+
         </div>
     </div>
 

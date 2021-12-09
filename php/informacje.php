@@ -88,7 +88,7 @@
                 <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 dark:hover:text-white ">Home</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Mapa</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Blog</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 bg-pink-400">Info</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 bg-pink-400  dark:bg-blue-500">Info</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 ">Twórcy</a></li>
                 <li class="flex justify-center rounded-3xl mt-2"><a href="" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 ">wyloguj</a></li>
                 
@@ -147,16 +147,9 @@
 
 
     <!-- container -->
-    <div class=" justify-around h-screen w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300 pl-0 dark:text-gray-200 flex flex-wrap gap-0">
+    <div class=" justify-center  h-full w-screen gap-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap p-4">
 
-        <!-- Historia -->
-        <div class="dark:bg-gray-700  border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-40 h-72">
-
-        </div>
-        <!-- skaner -->
-        <div class="w-28 h-28 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
-            <video id="video" class="fill-current h-full"></video>
-        </div>
+        
     </div>
 
     <!-- stopka -->
