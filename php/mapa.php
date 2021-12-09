@@ -7,6 +7,9 @@ require_once("header.php");
 <!-- container -->
 <div class=" justify-around h-screen w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300 pl-0 dark:text-gray-200 flex flex-wrap gap-0">
 
+    <div id="map">
+        <script src="/api/MapScript" async></script>
+    </div>
 
 </div>
 
@@ -20,8 +23,7 @@ require_once("header.php");
     </span>
 
 </footer>
-<script src="scanner.js"></script>
-<script src="index.js"></script>
+<script src="./js/index.js"></script>
 </body>
 
 </html>

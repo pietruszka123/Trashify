@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
 
     <title>Recycling Duter</title>
-    <script src="./barcodeScanner.js"></script>
+    <script src="./js/barcodeScanner.js"></script>
 </head>
 
 <body class="p-0 m-0 min-h-screen overflow-x-hidden">
@@ -84,7 +84,9 @@
                         <i class="fa fa-times"></i>
                     </div>
                 </div>
+                <?php
 
+                ?>
                 <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 dark:hover:text-white  bg-pink-400 dark:bg-blue-500">Home</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Mapa</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Blog</a></li>
@@ -93,9 +95,8 @@
                 <li class="flex justify-center rounded-3xl mt-2"><a href="" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 ">wyloguj</a></li>
 
 
+                <script src="./js/index.js"></script>
 
-
-                <script src="darkmode.js"></script>
 
             </ul>
         </nav>

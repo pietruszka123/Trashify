@@ -32,8 +32,8 @@ require_once("header.php");
     </span>
 
 </footer>
-<script src="scanner.js"></script>
-<script src="index.js"></script>
+<script src="./js/scanner.js"></script>
+
 </body>
 
 </html>

@@ -7,19 +7,18 @@ if ($mysqli === false) {
 
 $data = json_decode(file_get_contents('php://input'), true);
 //var_dump($data);
-$a = "a";
-$b = "b";
-$sql = "INSERT INTO `products` (`productCode`, `productInfo`) VALUES (?, ?)";
+
+
+$sql = "INSERT IGNORE INTO  `products` (`productCode`, `productInfo`) VALUES (?, ?);";
 if ($stmt = $mysqli->prepare($sql)) {
-    //$stmt->bind_param("ss", $data["code"], $data["product"]["abbreviated_product_name"]);
-    $stmt->bind_param("ss", $a, $b);
+    $stmt->bind_param("ss", $data["code"], $data["product"]["abbreviated_product_name"]);
     if ($stmt->execute()) {
 
-        echo '{status:1}';
+        echo '{status:true}';
         $mysqli->close();
         die();
     }
 }
 echo $mysqli->error;
 $mysqli->close();
-echo '{status:0}';
+echo '{status:false}';
