@@ -84,7 +84,7 @@
                    <i class="fa fa-times"></i>
                </div>
                 </div>
-                <li class="flex justify-center "><a href="#" class="w-11/12 text-center hover:bg-pink-400 dark:hover:bg-blue-500">Home</a></li>
+                <li class="flex justify-center "><a href="#" class="w-11/12 text-center hover:bg-pink-400 dark:bg-pink-400 dark:hover:text-blue-500">Home</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="#" class="w-11/12 text-center hover:bg-pink-400 dark:hover:bg-blue-500">Mapa</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="#" class=" w-11/12 text-center hover:bg-pink-400 dark:hover:bg-blue-500">Blog</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="#" class=" w-11/12 text-center hover:bg-pink-400 dark:hover:bg-blue-500">Info</a></li>
