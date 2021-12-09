@@ -72,29 +72,29 @@
             <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap gap-2">
                 <!-- darkmode switch -->
                 <div class="flex flex-row">
-                <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl mr-3 bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
-                       <div id="switch-toggle" class="w-6 h-6 md:w-7 flex self-center md:h-7 relative rounded-full transition duration-500 transform bg-pink-300 -translate-x-2 p-1 text-white ">
-                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                           </svg>
-                       </div>
-                   </button>
-                <div class="closeMenu z-10 flex justify-self-end">
-                   
-                   <i class="fa fa-times"></i>
-               </div>
+                    <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl mr-3 bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
+                        <div id="switch-toggle" class="w-6 h-6 md:w-7 flex self-center md:h-7 relative rounded-full transition duration-500 transform bg-pink-300 -translate-x-2 p-1 text-white ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="closeMenu z-10 flex justify-self-end">
+
+                        <i class="fa fa-times"></i>
+                    </div>
                 </div>
-             
+
                 <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 dark:hover:text-white  bg-pink-400">Home</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Mapa</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Blog</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500">Info</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 ">Twórcy</a></li>
                 <li class="flex justify-center rounded-3xl mt-2"><a href="" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 ">wyloguj</a></li>
-                
-               
 
-                
+
+
+
                 <script src="darkmode.js"></script>
 
             </ul>
@@ -156,6 +156,11 @@
         <!-- skaner -->
         <div class="w-28 h-28 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
             <video id="video" class="fill-current h-full"></video>
+            <input type="checkbox" value="Start" id="startvideo">
+            <select id="sourceSelect" hidden>
+            </select>
+            <input type="text" id="codeInput">
+            <input type="button" value="prześlij" id="submit">
         </div>
     </div>
 

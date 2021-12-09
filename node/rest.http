@@ -1,4 +1,4 @@
-GET https://world.openfoodfacts.org/api/v2/product/5902893000783.json HTTP/1.1
+GET https://world.openfoodfacts.org/api/v2/product/3502110009357.json HTTP/1.1
 ####
 Post http://localhost/apiv2.1.3.7/inserter.php
 Content-Type: application/json
