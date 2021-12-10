@@ -10,6 +10,7 @@
 
     <title>Recycling Duter</title>
     <script src="./js/barcodeScanner.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="p-0 m-0 min-h-screen overflow-x-hidden">
@@ -85,15 +86,27 @@
                     </div>
                 </div>
                 <?php
-                    $URI = $_SERVER['REQUEST_URI'];
-                    $beg = '/Konkurs4/php/';
+                $URI = $_SERVER['REQUEST_URI'];
+                $beg = '/Konkurs4/php/';
                 ?>
-                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'index.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Home</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'mapa.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>" >Mapa</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'blog.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Blog</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'informacje.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Info</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'tworcy.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Twórcy</a></li>
-                <li class="flex justify-center rounded-3xl mt-2"><a href="" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . '.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">wyloguj</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'index.php' == $URI) {
+                                                                                                                                                        echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500';
+                                                                                                                                                    } ?>">Home</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'mapa.php' == $URI) {
+                                                                                                                                                        echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500';
+                                                                                                                                                    } ?>">Mapa</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'blog.php' == $URI) {
+                                                                                                                                                        echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500';
+                                                                                                                                                    } ?>">Blog</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'informacje.php' == $URI) {
+                                                                                                                                                                echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500';
+                                                                                                                                                            } ?>">Info</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'tworcy.php' == $URI) {
+                                                                                                                                                            echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500';
+                                                                                                                                                        } ?>">Twórcy</a></li>
+                <li class="flex justify-center rounded-3xl mt-2"><a href="" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . '.php' == $URI) {
+                                                                                                                                                    echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500';
+                                                                                                                                                } ?>">wyloguj</a></li>
 
 
                 <script src="./js/index.js"></script>
