@@ -39,16 +39,15 @@ window.addEventListener("load", function () {
   //start
   document.getElementById("startvideo").addEventListener("change", function (e) {
     if (this.checked) {
-      console.log("start");
       codeReader
         .decodeOnceFromVideoDevice(selectedDeviceId, "video")
         .then((result) => {
           console.log(result);
-          document.getElementById("codeInput").value = result.text;
-          GetProduct(result.text);
+          document.getElementById("codeInput").value = result;
+          GetProduct(code);
         })
         .catch((err) => {
-          console.error(err);
+          //console.error(err);
         });
     } else {
       codeReader.reset();

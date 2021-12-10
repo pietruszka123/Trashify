@@ -11,10 +11,8 @@ if ($stmt = $mysqli->prepare($sql)) {
     if ($stmt->execute()) {
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
-        if (isset($row)) {
-            $r["status"] = true;
-            $r["data"] = $row;
-        }
+        $r["status"] = true;
+        $r["data"] = $row;
     }
 }
 echo json_encode($r);

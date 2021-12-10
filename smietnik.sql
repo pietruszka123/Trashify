@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2021 at 10:51 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Czas generowania: 09 Gru 2021, 13:32
+-- Wersja serwera: 10.4.22-MariaDB
+-- Wersja PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `smietnik`
+-- Baza danych: `smietnik`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Struktura tabeli dla tabeli `blog`
 --
 
 CREATE TABLE `blog` (
@@ -38,10 +38,11 @@ CREATE TABLE `blog` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Struktura tabeli dla tabeli `products`
 --
 
 CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
   `productCode` varchar(255) NOT NULL,
   `productInfo` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`productInfo`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -49,7 +50,7 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trashcans`
+-- Struktura tabeli dla tabeli `trashcans`
 --
 
 CREATE TABLE `trashcans` (
@@ -62,7 +63,7 @@ CREATE TABLE `trashcans` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktura tabeli dla tabeli `users`
 --
 
 CREATE TABLE `users` (
@@ -77,51 +78,57 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `blog`
+-- Indeksy dla tabeli `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
+-- Indeksy dla tabeli `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`productCode`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `trashcans`
+-- Indeksy dla tabeli `trashcans`
 --
 ALTER TABLE `trashcans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
--- AUTO_INCREMENT for table `blog`
+-- AUTO_INCREMENT dla tabeli `blog`
 --
 ALTER TABLE `blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `trashcans`
+-- AUTO_INCREMENT dla tabeli `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `trashcans`
 --
 ALTER TABLE `trashcans`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

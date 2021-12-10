@@ -17,19 +17,12 @@ app.post("/getProduct.json", (req, res, next) => {
   if (req.body && req.body.productCode) {
     getProduct(req.body.productCode).then((ret) => {
       console.log(ret);
-      if (ret.status == false) {
+      if (ret.status == true) {
         openfoodfacts.getProduct(req.body.productCode).then((ret) => {
-          ret = JSON.parse(ret);
-          if (ret.status != 0) {
-            res.writeHead(200, head);
-            var r = { status: ret.status, data: { ProductCode: ret.code, productInfo: ret.product.abbreviated_product_name } };
-            console.log(r);
-            res.end(JSON.stringify(r));
-          } else {
-            res.writeHead(200, head);
-            ret.status = false;
-            res.end(JSON.stringify(ret));
-          }
+          res.writeHead(200, head);
+          var r = { status: ret.status, data: { ProductCode: ret.code, productInfo: ret.product.abbreviated_product_name } };
+          console.log(r);
+          res.end(JSON.stringify(r));
           next();
         });
       } else {
@@ -73,7 +66,7 @@ app.get("/MapScript", (req, ress, next) => {
   req.on("error", function (e) {
     console.log("ERROR: " + e.message);
     ress.writeHead(503, head);
-    ress.end(e);
+    ress.end(E);
     next();
   });
 });

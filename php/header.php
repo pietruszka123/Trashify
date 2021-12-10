@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start(); ?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,10 @@
 
     <title>Recycling Duter</title>
     <script src="./js/barcodeScanner.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="">
-    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-screen items-center  flex">
+<body class="p-0 m-0 min-h-screen overflow-x-hidden">
+    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-full items-center overflow-hidden flex gap-2">
         <!-- paprotka -->
         <svg class="h-16 w-16 " style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
@@ -70,7 +69,7 @@
         <!-- nav bar -->
         <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 mr-5 ">
             <div class="openMenu"><i class="fa fa-bars dark:text-white "></i></div>
-            <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap px-2">
+            <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap gap-2 px-2">
                 <!-- darkmode switch -->
                 <div class="flex flex-row">
                     <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl mr-3 bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
@@ -86,8 +85,8 @@
                     </div>
                 </div>
                 <?php
-                $URI = $_SERVER['REQUEST_URI'];
-                $beg = '/Konkurs4/php/';
+                    $URI = $_SERVER['REQUEST_URI'];
+                    $beg = '/Konkurs4/php/';
                 ?>
                 <li class="flex justify-center rounded-3xl"><a href="index.php" class=" text-weight-bold w-full text-center bg-blue-500 text-pink-400 dark:hover:bg-blue-500 <?php if ($beg . 'index.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>">Home</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'mapa.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>" >Mapa</a></li>
@@ -103,7 +102,7 @@
             </ul>
         </nav>
         <!-- paprotka -->
-        <svg class="h-16 w-16 absolute right-0 z-0" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style=" fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <svg class="h-16 w-16 absolute right-0 z-0" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
                 <g transform="matrix(4.16667,0,0,4.16667,-606.319,-813.773)">
                     <path d="M263.6,266C266.4,264.7 268.4,262 268.6,258.7C268.9,253.9 265.2,251.2 260.5,250.9C257.1,250.7 252.9,253.5 250.2,255.2C240.6,261.4 233.1,263 227.9,264.1C226,264.5 224.1,264.9 222.1,264.9C222.2,265 248,274.4 263.6,266Z" style="fill:#f472b6;fill-rule:nonzero;" />
@@ -145,5 +144,4 @@
         </svg>
     </header>
     <!-- gradientowa linia -->
-    <div class="w-screen h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
-  
+    <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
