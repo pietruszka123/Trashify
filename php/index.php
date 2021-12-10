@@ -19,7 +19,7 @@ require_once("header.php");
             <select class="bg-gray-500 text-white pl-3 rounded-xl" id="sourceSelect" hidden>
             </select>
             <input type="text" id="codeInput" class="bg-gray-500 text-white pl-3 rounded-xl">
-            <button id="submit" class="text-white  justify-center items-center flex rounded"><i class="far fa-paper-plane"></i></button>
+            <button id="submit" class="p-2 text-white  justify-center items-center flex rounded"><i class="far fa-paper-plane"></i></button>
         </label>
 
     </div>
