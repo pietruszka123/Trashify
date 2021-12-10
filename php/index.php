@@ -14,9 +14,9 @@ require_once("header.php");
             <input class="toggle__input" name="" type="checkbox" id="startvideo">
             <div class="toggle__fill"></div>
         </label>
-        <label class="flex flex-row gap-2 mb-2 justify-center items-center ">
+        <label class="flex flex-row gap-2 mb-2 justify-center items-center flex-wrap">
 
-            <select id="sourceSelect" hidden>
+            <select class="bg-gray-500 text-white pl-3 rounded-xl" id="sourceSelect" hidden>
             </select>
             <input type="text" id="codeInput" class="bg-gray-500 text-white pl-3 rounded-xl">
             <button id="submit" class="text-white  justify-center items-center flex rounded"><i class="far fa-paper-plane"></i></button>
