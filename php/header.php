@@ -57,7 +57,7 @@ $_SESSION['rememberMe'] = NULL; */
     <script src="./js/barcodeScanner.js"></script>
 </head>
 
-<body class="p-0 m-0 min-h-screen overflow-x-hidden">
+<body class="p-0 m-0 min-h-screen overflow-x-hidden dark:bg-gray-800 bg-gray-300">
     <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-full items-center overflow-hidden flex gap-2">
         <!-- paprotka -->
         <svg class="h-16 w-16 " style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
@@ -191,4 +191,4 @@ $_SESSION['rememberMe'] = NULL; */
     </header>
     <!-- gradientowa linia -->
     <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
-    <div class=" justify-around h-screen w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap">
+    <div class=" justify-around h-full w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap">

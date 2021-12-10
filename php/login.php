@@ -140,46 +140,27 @@ userLogin();
 
 ?>
 
-<!-- container dla formularza -->
-   
+
 <!-- formularz -->
-    <form method="POST" class=" w-60 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-4 ">
+<form method="POST" class="w-70 mt-28 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-4 ">
         <!-- nagłówek -->
-    <h1 class="text-3xl pt-1 mb-2">Zaloguj się</h1>
+    <h1 class="text-4xl font-bold pt-1 mb-2">Zaloguj się</h1>
 
     <!-- dane urzytkownika -->
-        <input type="email" id="email" name="email" class="w-full h-8 p-3 m-2 mb-0 bg-gray-500 text-white rounded-xl focus:outline-none" placeholder="Email">
-        <input type="password" id="password" name="password" class="w-full h-8 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-xl" placeholder="Password" pattern="^[a-zA-Z0-9]{3,64}$">
+        <input type="email" id="email" name="email" class="w-full h-10 p-3 m-2 mb-0 bg-gray-500 text-white rounded-xl focus:outline-none text-xl" placeholder="Email">
+        <input type="password" id="password" name="password" class="w-full h-10 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-xl text-xl" placeholder="Password" pattern="^[a-zA-Z0-9]{3,64}$">
 
 <!-- remember me -->
-        <label class="m-1">
-        <label for="loginRemember" class="loginRememberMe">Zapamiętaj mnie:</label>
-            <input type="checkbox" id="rememberMe" name="rememberMe" class="loginRememberMeCheckBox active:bg-violet-600">
+        <label class="m-1 flex items-center gap-2">
+        <label for="loginRemember" class="loginRememberMe text-2xl">Zapamiętaj mnie:</label>
+            <input type="checkbox" id="rememberMe" name="rememberMe" class="text-pink-500 pt-3 loginRememberMeCheckBox w-5 h-5 " >
         </label>
 <!-- wyślij -->
-        <input type="submit" id="submit" name="submit" class="w-1/2 bg-gray-800 m-3 mt-4 p-1" value="Zaloguj">
+        <input type="submit" id="submit" name="submit" class="w-2/3 bg-gray-800 m-3 mt-4 p-3 text-2xl font-semibold" value="Zaloguj">
 
-<p>Nie masz jeszcze konta?</p>
-<p>Załóż je <a href="register.php" class="text-pink-500 ">TERAZ!</a></p>
+<p class=" text-xl">Nie masz jeszcze konta?</p>
+<p class=" text-xl">Zarejestruj <a href="register.php" class="text-pink-500 underline font-bold">TERAZ!</a></p>
     </form>
-
-<?php
-include_once('footer.php');
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- stopka -->
-<?php include_once('footer.php');
