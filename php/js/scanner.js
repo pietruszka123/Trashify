@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
         selectedDeviceId = sourceSelect.value;
       };
     } else {
-      sourceSelect.hidden = true;
+      sourceSelect.hidden = false;
     }
   });
   /**
