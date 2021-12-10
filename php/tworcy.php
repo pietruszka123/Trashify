@@ -110,8 +110,7 @@ require_once("header.php");
         <img src="img/html.png" alt="HTML i CSS" class=" w-28 h-28">
 
     </div>
-    <script src="scanner.js"></script>
-<script src="index.js"></script>
+
 
 <!-- stopka -->
 <?php include_once('footer.php');

@@ -1,3 +1,48 @@
+<?php
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'smietnik');
+$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+
+
+/* 
+if (isset($_COOKIE['token']) &&  $_COOKIE['token'] != "notSet" && isTokenValid($_COOKIE['token']) && $_SERVER['REQUEST_URI'] == 'login.php')
+{ //If the token is valid, then sends you to the index page (if already not somewhere else than login page)
+    header("Location: index.php");
+}
+else if (isset($_COOKIE['token']) &&  $_COOKIE['token'] != "notSet" && isTokenValid($_COOKIE['token']))
+{
+    ;
+}
+else if ($_SERVER['REQUEST_URI'] != '/login.php')
+{ //If you don't have a cookie token then sets it to "notSet" and sends you to the login page if you're not there
+    setcookie("token", "notSet", 0, "/");
+    header("Location: login.php");
+}
+else
+{ //If you don't have a cookie token then sets it to "notSet"
+    setcookie("token", "notSet", 0, "/");
+}
+
+
+
+//Set cookie value if available
+if (isset($_SESSION['token']) && isset($_SESSION['rememberMe']))
+{
+    setcookie("token", $_SESSION['token'], time() + (3600 * 24 * 31 * 12), "/");
+}
+else if (isset($_SESSION['token']) && !isset($_SESSION['rememberMe']))
+{
+    setcookie("token", $_SESSION['token'], 0, "/");
+}
+
+//Dump these values
+$_SESSION['token'] = NULL;
+$_SESSION['rememberMe'] = NULL; */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,7 +118,7 @@
                 <!-- darkmode switch -->
                 <div class="flex flex-row">
                     <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl mr-3 bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
-                        <div id="switch-toggle" class="w-6 h-6 md:w-7 flex self-center md:h-7 relative rounded-full transition duration-500 transform bg-pink-300 -translate-x-2 p-1 text-white ">
+                        <div id="switch-toggle" class="w-6 h-6 md:w-7 flex self-center md:h-7 relative rounded-full transition duration-500 transform bg-pink-500 -translate-x-2 p-1 text-white ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>

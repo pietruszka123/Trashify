@@ -19,10 +19,8 @@ require_once("header.php");
 <!-- container -->
 
     <div id="map">
-        <script src="/api/MapScript" async></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_qeyK1I3H1OzVty6WmMbtUQMI0JwWxdw&callback=initMap&v=weekly" async></script>
     </div>
 
-
-<script src="./js/index.js"></script>
 <!-- stopka -->
 <?php include_once('footer.php');

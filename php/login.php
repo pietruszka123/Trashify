@@ -1,47 +1,5 @@
-<!-- container -->
-<?php
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'smietnik');
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-
-
-
-if (isset($_COOKIE['token']) &&  $_COOKIE['token'] != "notSet" && isTokenValid($_COOKIE['token']) && $_SERVER['REQUEST_URI'] == 'login.php')
-{ //If the token is valid, then sends you to the index page (if already not somewhere else than login page)
-    header("Location: index.php");
-}
-else if (isset($_COOKIE['token']) &&  $_COOKIE['token'] != "notSet" && isTokenValid($_COOKIE['token']))
-{
-    ;
-}
-else if ($_SERVER['REQUEST_URI'] != '/login.php')
-{ //If you don't have a cookie token then sets it to "notSet" and sends you to the login page if you're not there
-    setcookie("token", "notSet", 0, "/");
-    header("Location: login.php");
-}
-else
-{ //If you don't have a cookie token then sets it to "notSet"
-    setcookie("token", "notSet", 0, "/");
-}
-
-
-
-//Set cookie value if available
-if (isset($_SESSION['token']) && isset($_SESSION['rememberMe']))
-{
-    setcookie("token", $_SESSION['token'], time() + (3600 * 24 * 31 * 12), "/");
-}
-else if (isset($_SESSION['token']) && !isset($_SESSION['rememberMe']))
-{
-    setcookie("token", $_SESSION['token'], 0, "/");
-}
-
-//Dump these values
-$_SESSION['token'] = NULL;
-$_SESSION['rememberMe'] = NULL;
+<?php require_once("header.php");
 // Logs in the user
 function userLogin()
 {
@@ -179,28 +137,31 @@ function generateToken()
 }
 
 userLogin();
-require_once("header.php");
+
 ?>
 
-
-<div class="w-72 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-4 mt-1">
+<!-- container dla formularza -->
    
-    <form method="POST">
-    <h1 class="text-3xl pt-1">Zaloguj się</h1>
-        <input type="email" id="email" name="email" class="w-10/12 p-2 m-6 bg-gray-500 text-white rounded-xl focus:outline-none" placeholder="Email"><br>
-        <input type="password" id="password" name="password" class="w-10/12 p-2 m-6 bg-gray-500 text-white focus:outline-none rounded-xl" placeholder="Password" pattern="^[a-zA-Z0-9]{3,64}$"><br>
+<!-- formularz -->
+    <form method="POST" class=" w-60 h-40 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-4 ">
+        <!-- nagłówek -->
+    <h1 class="text-3xl pt-1 mb-2">Zaloguj się</h1>
 
+    <!-- dane urzytkownika -->
+        <input type="email" id="email" name="email" class="w-full h-8 p-3 m-2 mb-0 bg-gray-500 text-white rounded-xl focus:outline-none" placeholder="Email">
+        <input type="password" id="password" name="password" class="w-full h-8 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-xl" placeholder="Password" pattern="^[a-zA-Z0-9]{3,64}$">
 
-lab
+<!-- remember me -->
+        <label class="m-1">
         <label for="loginRemember" class="loginRememberMe">Zapamiętaj mnie:</label>
             <input type="checkbox" id="rememberMe" name="rememberMe" class="loginRememberMeCheckBox active:bg-violet-600">
-        
+        </label>
+<!-- wyślij -->
+        <input type="submit" id="submit" name="submit" class="w-1/2 bg-gray-800 m-3 mt-4 p-1" value="Zaloguj">
 
-        <input type="submit" id="submit" name="submit" class="w-1/2" value="Zaloguj">
-
-
+<p>Nie masz jeszcze konta?</p>
+<p>Załóż je <a href="register.php" class="text-pink-500 ">TERAZ!</a></p>
     </form>
-</div>
 
 <?php
 include_once('footer.php');
@@ -221,5 +182,4 @@ include_once('footer.php');
 
 
 <!-- stopka -->
-<script src="index.js"></script>
 <?php include_once('footer.php');
