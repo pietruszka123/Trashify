@@ -143,7 +143,7 @@ userLogin();
 <!-- container dla formularza -->
    
 <!-- formularz -->
-    <form method="POST" class=" w-60 h-40 dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-4 ">
+    <form method="POST" class=" w-60 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-4 ">
         <!-- nagłówek -->
     <h1 class="text-3xl pt-1 mb-2">Zaloguj się</h1>
 
