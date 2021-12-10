@@ -13,8 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="p-0 m-0 min-h-screen overflow-x-hidden">
-    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-full items-center overflow-hidden flex gap-2">
+<body class="">
+    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-screen items-center  flex">
         <!-- paprotka -->
         <svg class="h-16 w-16 " style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
@@ -70,7 +70,7 @@
         <!-- nav bar -->
         <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 mr-5 ">
             <div class="openMenu"><i class="fa fa-bars dark:text-white "></i></div>
-            <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap gap-2 px-2">
+            <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap px-2">
                 <!-- darkmode switch -->
                 <div class="flex flex-row">
                     <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl mr-3 bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
@@ -103,7 +103,7 @@
             </ul>
         </nav>
         <!-- paprotka -->
-        <svg class="h-16 w-16 absolute right-0 z-0" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <svg class="h-16 w-16 absolute right-0 z-0" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style=" fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
                 <g transform="matrix(4.16667,0,0,4.16667,-606.319,-813.773)">
                     <path d="M263.6,266C266.4,264.7 268.4,262 268.6,258.7C268.9,253.9 265.2,251.2 260.5,250.9C257.1,250.7 252.9,253.5 250.2,255.2C240.6,261.4 233.1,263 227.9,264.1C226,264.5 224.1,264.9 222.1,264.9C222.2,265 248,274.4 263.6,266Z" style="fill:#f472b6;fill-rule:nonzero;" />
@@ -145,5 +145,5 @@
         </svg>
     </header>
     <!-- gradientowa linia -->
-    <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
-    <div class=" justify-around h-full w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap gap-0">
+    <div class="w-screen h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
+  

@@ -16,8 +16,8 @@ require_once("header.php");
     </label>
 
 <!-- element 1 -->
-    <div class="my-2 w-72 h-fit justify-center flex flex-wrap p-2 bg-gray-600 border-4 gap-3 border-gray-300 rounded-2xl">
-        <h1 class="text-2xl justify-center gap-1 flex w-full">Marcin Czechowicz</h1>
+    <div class="my-2 w-72 h-fit justify-center flex flex-wrap p-2 bg-gray-600 border-4 border-gray-300 rounded-2xl">
+        <h1 class="text-2xl justify-center flex w-full">Marcin Czechowicz</h1>
         <div class="w-1/2">
             <h1 class="w-full text-2xl text-blue-500 font-bold">MySql</h1>
             <p class="w-full">
@@ -47,8 +47,8 @@ require_once("header.php");
         <img src="img/html.png" alt="HTML i CSS" class=" w-28 h-28">
 <!-- element 2 -->
     </div>
-    <div class="my-2 w-72 h-fit justify-center flex flex-wrap p-2 bg-gray-600 border-4 gap-3 border-gray-300 rounded-2xl">
-        <h1 class="text-2xl justify-center gap-1 flex w-full">Piotr Pamuła</h1>
+    <div class="my-2 w-72 h-fit justify-center flex flex-wrap p-2 bg-gray-600 border-4  border-gray-300 rounded-2xl">
+        <h1 class="text-2xl justify-center flex w-full">Piotr Pamuła</h1>
         <div class="w-1/2">
             <h1 class="w-full text-2xl text-blue-500 font-bold">CSS</h1>
             <p class="w-full">
@@ -79,8 +79,8 @@ require_once("header.php");
 
     </div>
     <!-- 3 element -->
-    <div class=" my-2 w-72 h-fit justify-center flex flex-wrap p-2 bg-gray-600 border-4 gap-3 border-gray-300 rounded-2xl">
-        <h1 class="text-2xl justify-center gap-1 flex w-full">Sebastian Firlit</h1>
+    <div class=" my-2 w-72 h-fit justify-center flex flex-wrap p-2 bg-gray-600 border-4 border-gray-300 rounded-2xl">
+        <h1 class="text-2xl justify-center flex w-full">Sebastian Firlit</h1>
         <div class="w-1/2">
             <h1 class="w-full text-2xl text-blue-500 font-bold">CSS</h1>
             <p class="w-full">

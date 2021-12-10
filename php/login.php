@@ -187,7 +187,7 @@ userLogin();
 ?>
 
 
-<div class="w-72 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-4 mt-1">
+<div class="w-72 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-3">
    
     <form method="POST">
     <h1 class="text-3xl pt-1">Zaloguj się</h1>
