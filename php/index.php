@@ -9,7 +9,7 @@ require_once("header.php");
 <div class=" justify-center min-h-screen h-full w-screen gap-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap p-4">
     <!-- skaner -->
     <div class=" w-72 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
-        <video id="video" class="fill-current bg-gray-600 mb-2 rounded-xl max-h-60 h-60 transform-mirror border-4 border-gray-400"></video>
+        <video id="video" class="fill-current bg-gray-600 mb-2 rounded-xl max-h-60 h-60 border-4 border-gray-400"></video>
         <label class="toggle" for="startvideo">
             <input class="toggle__input" name="" type="checkbox" id="startvideo">
             <div class="toggle__fill"></div>
