@@ -88,7 +88,7 @@
                     $URI = $_SERVER['REQUEST_URI'];
                     $beg = '/Konkurs4/php/';
                 ?>
-                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'index.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Home</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" text-weight-bold w-full text-center bg-blue-500 text-pink-400 dark:hover:bg-blue-500 <?php if ($beg . 'index.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>">Home</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'mapa.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>" >Mapa</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'blog.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Blog</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'informacje.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Info</a></li>

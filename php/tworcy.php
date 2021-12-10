@@ -9,9 +9,10 @@ require_once("header.php");
 
     <!-- nagłówek -->
     <label class="w-full flex flex-wrap justify-center place-items-start">
-        <h1 class="w-screen text-center text-xl">Autorzy aplikacji<div class="w-full mx-2 h-px top-0 to-pink-400 bg-gradient-to-r from-blue-500">
-        </h1>
-
+        <div>
+            <h1 class="w-screen text-center py-6 text-xl">Autorzy aplikacji</h1>
+            <div class="w-full mx-2 h-px top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
+        </div>
 
     </label>
 
@@ -127,14 +128,3 @@ require_once("header.php");
 </body>
 
 </html>
-<style>
-    ul {
-        list-style: none
-    }
-
-    li::before {
-        content: "• ";
-        color: white
-
-    }
-</style>
