@@ -18,6 +18,41 @@ window.addEventListener("load", function() {
         } else {
             sourceSelect.hidden = false;
         }
+window.addEventListener("load", function () {
+  let selectedDeviceId;
+  const codeReader = new ZXing.BrowserBarcodeReader();
+  codeReader.getVideoInputDevices().then((videoInputDevices) => {
+    const sourceSelect = document.getElementById("sourceSelect");
+    selectedDeviceId = videoInputDevices[0].deviceId;
+    if (videoInputDevices.length > 1) {
+      videoInputDevices.forEach((element) => {
+        const sourceOption = document.createElement("option");
+        sourceOption.text = element.label;
+        sourceOption.value = element.deviceId;
+        sourceSelect.appendChild(sourceOption);
+      });
+      sourceSelect.hidden = false;
+      sourceSelect.onchange = () => {
+        selectedDeviceId = sourceSelect.value;
+      };
+    } else {
+      sourceSelect.hidden = false;
+    }
+  });
+  /**
+   *
+   * @param {string} code kod Produktu
+   */
+  function GetProduct(code) {
+    $.ajax({
+      type: "post",
+      url: "/api/getProduct.json",
+      data: JSON.stringify({ productCode: code }),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success: function (response) {
+        console.log(response);
+      },
     });
     /**
      *

@@ -38,6 +38,23 @@ app.post("/getProduct.json", (req, res, next) => {
                 res.end(JSON.stringify(ret));
                 next();
             }
+  if (req.body && req.body.productCode) {
+    getProduct(req.body.productCode).then((ret) => {
+      console.log(`b${ret}`);
+      if (ret.status == false) {
+        openfoodfacts.getProduct(req.body.productCode).then((ret) => {
+          ret = JSON.parse(ret);
+          if (ret.status != 0) {
+            res.writeHead(200, head);
+            var r = { status: ret.status, data: { ProductCode: ret.code, productInfo: ret.product.abbreviated_product_name } };
+            Insert(ret);
+            res.end(JSON.stringify(r));
+          } else {
+            res.writeHead(200, head);
+            ret.status = false;
+            res.end(JSON.stringify(ret));
+          }
+          next();
         });
     } else {
         res.writeHead(404, head);
@@ -96,6 +113,30 @@ function Insert() {
                     var body = Buffer.concat(bodyChunks);
                     resolve(body);
                 });
+function Insert(r) {
+  var d = JSON.stringify(r);
+  return new Promise((resolve, reject) => {
+    var http = require("http");
+    var options = {
+      host: "localhost",
+      path: `/apiv2.1.3.7/inserter.php`,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Content-Length": d.length,
+      },
+    };
+    var req = http.request(options, function (res) {
+      if (res.statusCode != 200) resolve(JSON.stringify({ status: false, status_verbose: "server Error", code: productCode }));
+      var bodyChunks = [];
+      res
+        .on("data", function (chunk) {
+          bodyChunks.push(chunk);
+        })
+        .on("end", function () {
+          var body = Buffer.concat(bodyChunks);
+          console.log(JSON.parse(body));
+          resolve(body);
         });
 
         req.on("error", function(e) {
