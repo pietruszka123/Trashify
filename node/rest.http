@@ -34,3 +34,5 @@ Content-Type: application/json
 {"productCode":"3502110009357"}
 ###
 GET http://localhost/api/MapScript
+###
+GET http://localhost/apiv2.1.3.7/Koszee.php
