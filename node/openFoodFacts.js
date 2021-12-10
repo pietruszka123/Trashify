@@ -18,7 +18,7 @@ module.exports.getProduct = async function getProduct(productCode) {
         })
         .on("end", function () {
           var body = Buffer.concat(bodyChunks);
-          resolve(JSON.parse(body));
+          resolve(body);
         });
     });
 

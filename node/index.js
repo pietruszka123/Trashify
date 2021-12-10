@@ -16,14 +16,14 @@ app.use("/", express.static("node/public"));
 app.post("/getProduct.json", (req, res, next) => {
   if (req.body && req.body.productCode) {
     getProduct(req.body.productCode).then((ret) => {
-      console.log(ret);
+      console.log(`b${ret}`);
       if (ret.status == false) {
         openfoodfacts.getProduct(req.body.productCode).then((ret) => {
           ret = JSON.parse(ret);
           if (ret.status != 0) {
             res.writeHead(200, head);
             var r = { status: ret.status, data: { ProductCode: ret.code, productInfo: ret.product.abbreviated_product_name } };
-            console.log(r);
+            Insert(ret);
             res.end(JSON.stringify(r));
           } else {
             res.writeHead(200, head);
@@ -77,14 +77,20 @@ app.get("/MapScript", (req, ress, next) => {
     next();
   });
 });
-function Insert() {
+function Insert(r) {
+  var d = JSON.stringify(r);
   return new Promise((resolve, reject) => {
     var http = require("http");
     var options = {
       host: "localhost",
-      path: `/apiv2.1.3.7/inserter.php?code=${code}`,
+      path: `/apiv2.1.3.7/inserter.php`,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Content-Length": d.length,
+      },
     };
-    var req = http.get(options, function (res) {
+    var req = http.request(options, function (res) {
       if (res.statusCode != 200) resolve(JSON.stringify({ status: false, status_verbose: "server Error", code: productCode }));
       var bodyChunks = [];
       res
@@ -93,6 +99,7 @@ function Insert() {
         })
         .on("end", function () {
           var body = Buffer.concat(bodyChunks);
+          console.log(JSON.parse(body));
           resolve(body);
         });
     });
