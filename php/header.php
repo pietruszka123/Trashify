@@ -86,14 +86,14 @@
                 </div>
                 <?php
                     $URI = $_SERVER['REQUEST_URI'];
-                    $beg = '/Konkurs4/php/';
+                    $beg = "/";//'/Konkurs4/php/';
                 ?>
-                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" text-weight-bold w-full text-center bg-blue-500 text-pink-400 dark:hover:bg-blue-500 <?php if ($beg . 'index.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>">Home</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'mapa.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>" >Mapa</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'blog.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Blog</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'informacje.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Info</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . 'tworcy.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">Twórcy</a></li>
-                <li class="flex justify-center rounded-3xl mt-2"><a href="" class=" w-full text-center hover:bg-blue-500 dark:hover:bg-blue-500 <?php if ($beg . '.php' == $URI) { echo 'dark:hover:text-white  bg-pink-400 dark:bg-blue-500'; } ?>">wyloguj</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'index.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>">Home</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'mapa.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>" >Mapa</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'blog.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>">Blog</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'informacje.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>">Info</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'tworcy.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>">Twórcy</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . '.php' == $URI) { echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400'; } ?>">wyloguj</a></li>
 
 
                 <script src="./js/index.js"></script>
@@ -145,3 +145,4 @@
     </header>
     <!-- gradientowa linia -->
     <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
+    <div class=" justify-around h-screen w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap">
