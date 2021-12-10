@@ -6,7 +6,7 @@ require_once("header.php");
 
 
 <!-- container -->
-<div class=" justify-center min-h-screen h-full w-screen gap-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap p-4">
+
     <!-- skaner -->
     <div class=" w-72 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
         <video id="video" class="fill-current bg-gray-600 mb-2 rounded-xl max-h-60 h-60 border-4 border-gray-400"></video>
@@ -27,7 +27,7 @@ require_once("header.php");
     <div class="dark:bg-gray-700  border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-72 h-80">
 
     </div>
-</div>
+
 <script src="./js/scanner.js"></script>
 <!-- stopka -->
 <?php include_once('footer.php');

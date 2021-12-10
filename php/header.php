@@ -146,3 +146,4 @@
     </header>
     <!-- gradientowa linia -->
     <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
+    <div class=" justify-around h-full w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300  dark:text-gray-200 flex flex-wrap gap-0">
