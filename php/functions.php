@@ -41,36 +41,27 @@ $_SESSION['rememberMe'] = NULL;
 
 
 // Looks if the email given by the user is correct
-function emailCorrect($email)
-{
-    if (filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
+function emailCorrect($email) {
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
 
 // Looks if the password given by the user is correct
-function passwordCorrect($password)
-{
+function passwordCorrect($password) {
     $correctness = preg_match('/^[a-zA-Z0-9]{3,64}$/', $password);
 
-    if ($correctness == 1)
-    {
+    if($correctness == 1) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
 
 // Generates a random token
-function generateToken()
-{
+function generateToken() {
     $bytes = random_bytes(64);
     return bin2hex($bytes);
 }
@@ -100,6 +91,4 @@ function isTokenValid($cookie)
         }
     }
 }
-
-
 ?>
