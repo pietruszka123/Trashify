@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
         const sourceOption = document.createElement("option");
         sourceOption.text = element.label;
         sourceOption.value = element.deviceId;
-        sourceOption.classList = "truncate";
+        //sourceOption.classList = "truncate";
         sourceSelect.appendChild(sourceOption);
       });
       sourceSelect.hidden = false;
@@ -20,6 +20,28 @@ window.addEventListener("load", function () {
       sourceSelect.hidden = false;
     }
   });
+  function setInfo(response) {
+    var productInfoCode = document.getElementById("productInfoCode");
+    var recycling = document.getElementById("recycling");
+    var packagingType = document.getElementById("packagingType");
+    var ProductImage = document.getElementById("ProductImage");
+    var Productname = document.getElementById("Productname");
+    Productname.textContent = response.data.productInfo.name;
+    if (!response.data.packagingType || response.data.packagingType.trim().length == 0) {
+      packagingType.textContent = "brak informacji";
+    } else {
+      packagingType.textContent = response.data.productInfo.packagingType;
+    }
+    if (!response.data.rec || response.data.rec.trim().length == 0) {
+      recycling.textContent = "brak informacji";
+    } else {
+      recycling.textContent = response.data.productInfo.rec;
+    }
+
+    productInfoCode.textContent = response.data.productCode;
+
+    ProductImage.src = response.data.productInfo.image_url;
+  }
   /**
    *
    * @param {string} code kod Produktu
@@ -34,14 +56,7 @@ window.addEventListener("load", function () {
       success: function (response) {
         console.log(response);
         console.log(response.data);
-        var productInfoCode = document.getElementById("productInfoCode");
-        var recycling = document.getElementById("recycling");
-        var packagingType = document.getElementById("packagingType");
-        var ProductImage = document.getElementById("ProductImage");
-        productInfoCode.textContent = response.data.ProductCode;
-        packagingType.textContent = response.data.productInfo.packagingType;
-        recycling.textContent = response.data.productInfo.packagingType;
-        ProductImage.src = response.data.productInfo.image_url;
+        setInfo(response);
       },
     });
   }
@@ -67,5 +82,17 @@ window.addEventListener("load", function () {
   document.getElementById("submit").addEventListener("click", function (e) {
     var code = document.getElementById("codeInput").value.trim();
     GetProduct(code);
+  });
+  $.ajax({
+    type: "post",
+    url: "/api/getProduct.json",
+    data: JSON.stringify({ productCode: "random" }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (response) {
+      console.log(response);
+      console.log(response.data);
+      setInfo(response);
+    },
   });
 });

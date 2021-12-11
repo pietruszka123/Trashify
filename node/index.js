@@ -14,6 +14,8 @@ app.use("/", express.static("node/public"));
 //server app.use("/api", express.static("node/public"));
 //Produkty
 app.post("/getProduct.json", (req, res, next) => {
+  req.socket.on("error", function () {});
+  res.socket.on("error", function () {});
   if (req.body && req.body.productCode) {
     getProduct(req.body.productCode).then((ret) => {
       //console.log(`baa ${ret}`);
@@ -23,7 +25,8 @@ app.post("/getProduct.json", (req, res, next) => {
           if (ret.status != 0) {
             res.writeHead(200, head);
             var r = { status: ret.status, data: { ProductCode: ret.code, productInfo: { name: ret.product.abbreviated_product_name, image_url: ret.product.image_url, rec: "", packagingType: "" } } };
-            Insert(ret);
+            Insert(r.data);
+
             res.end(JSON.stringify(r));
           } else {
             res.writeHead(200, head);
@@ -38,8 +41,6 @@ app.post("/getProduct.json", (req, res, next) => {
           next();
         });
       } else {
-        console.log("????????????");
-        console.log(ret.status);
         res.writeHead(200, head);
         res.end(JSON.stringify(ret));
         next();
@@ -74,11 +75,11 @@ function Insert(r) {
         })
         .on("end", function () {
           var body = Buffer.concat(bodyChunks);
-          console.log(JSON.parse(body));
-          resolve(body);
+          resolve(JSON.parse(body));
         });
     });
-
+    req.write(d);
+    req.end();
     req.on("error", function (e) {
       console.log("ERROR: " + e.message);
       reject(e);

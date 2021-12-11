@@ -7,17 +7,17 @@ if ($mysqli === false) {
 $data = json_decode(file_get_contents('php://input'), true);
 //var_dump($data);
 
-$json = json_encode($data["product"]);
+$json = json_encode($data["productInfo"]);
 $sql = "INSERT IGNORE INTO  `products` (`productCode`, `productInfo`) VALUES (?, ?);";
 if ($stmt = $mysqli->prepare($sql)) {
-    $stmt->bind_param("ss", $data["code"], $json);
+    $stmt->bind_param("ss", $data["ProductCode"], $json);
     if ($stmt->execute()) {
 
-        echo '{status:true}';
+        echo json_encode(["status" => true]);
         $mysqli->close();
         die();
     }
 }
 echo $mysqli->error;
 $mysqli->close();
-echo '{status:false}';
+echo json_encode(["status" => false]);
