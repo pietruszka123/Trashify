@@ -16,6 +16,83 @@ class Kosz {
     });
   }
 }
+class geo {
+  constructor() {
+    this.geo = new ol.Geolocation({
+      // enableHighAccuracy must be set to true to have the heading value.
+      trackingOptions: {
+        enableHighAccuracy: true,
+      },
+      projection: view.getProjection(),
+    });
+    this.geo.setTracking(true);
+    this.geo.on("change:position", () => {
+      const coordinates = this.geo.getPosition();
+      this.positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+    });
+    this.accuracyFeature = new ol.Feature();
+    this.geo.on("change:accuracyGeometry", () => {
+      this.accuracyFeature.setGeometry(this.geo.getAccuracyGeometry());
+    });
+    this.positionFeature = new ol.Feature();
+    this.positionFeature.setStyle(
+      new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 6,
+          fill: new ol.style.Fill({
+            color: "#3399CC",
+          }),
+          stroke: new ol.style.Stroke({
+            color: "#fff",
+            width: 2,
+          }),
+        }),
+      })
+    );
+  }
+  start() {
+    source.addFeature(this.positionFeature);
+    source.addFeature(this.accuracyFeature);
+    view.animate({
+      center: this.geo.getPosition(),
+      duration: 2000,
+    });
+  }
+  stop() {
+    source.removeFeature(this.positionFeature);
+    source.removeFeature(this.accuracyFeature);
+  }
+}
+class RotateNorthControl extends ol.control.Control {
+  constructor(opt_options) {
+    const options = opt_options || {};
+
+    const button = document.createElement("button");
+    button.innerHTML = "P";
+
+    const element = document.createElement("div");
+    element.className = "rotate-north ol-unselectable ol-control";
+    element.appendChild(button);
+
+    super({
+      element: element,
+      target: options.target,
+    });
+    this.geo = new geo();
+    this.state = false;
+    button.addEventListener("click", this.handleRotateNorth.bind(this), false);
+  }
+
+  handleRotateNorth() {
+    if (this.state) {
+      this.geo.stop();
+    } else {
+      this.geo.start();
+    }
+    this.state = !this.state;
+    //this.getMap().getView().setRotation(0);
+  }
+}
 var cords = { lon: 21.168062, lan: 49.677148 };
 $.ajax({
   type: "post",
@@ -73,6 +150,7 @@ const currentVector = new ol.layer.Vector({
   source: currentSource,
 });
 var map = new ol.Map({
+  controls: ol.control.defaults().extend([new RotateNorthControl()]),
   target: "map",
   layers: [
     new ol.layer.Tile({
@@ -112,6 +190,8 @@ $("#add").change(function (e) {
     map.addInteraction(draw);
   } else {
     map.removeInteraction(draw);
+    currentSource.clear();
+    point = false;
   }
 });
 
