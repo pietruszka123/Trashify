@@ -1,3 +1,24 @@
+function getColor(t) {
+  switch (t) {
+    case "mieszane":
+      return "#000000";
+      break;
+    case "plastik":
+      return "#fde047";
+      break;
+    case "papier":
+      return "#1e40af";
+      break;
+    case "szklo":
+      return "#16a34a";
+      break;
+    case "bio":
+      return "#713f12";
+    default:
+      return "#ff0000";
+      break;
+  }
+}
 class Kosz {
   constructor() {
     this.pos = [0, 0];
@@ -19,7 +40,6 @@ class Kosz {
 class geo {
   constructor() {
     this.geo = new ol.Geolocation({
-      // enableHighAccuracy must be set to true to have the heading value.
       trackingOptions: {
         enableHighAccuracy: true,
       },
@@ -93,6 +113,22 @@ class Location extends ol.control.Control {
     //this.getMap().getView().setRotation(0);
   }
 }
+function setStyle(element, color) {
+  element.setStyle(
+    new ol.style.Style({
+      image: new ol.style.Circle({
+        radius: 6,
+        fill: new ol.style.Fill({
+          color: color,
+        }),
+        stroke: new ol.style.Stroke({
+          color: "#fff",
+          width: 2,
+        }),
+      }),
+    })
+  );
+}
 var cords = { lon: 21.168062, lan: 49.677148 };
 $.ajax({
   type: "post",
@@ -106,35 +142,31 @@ $.ajax({
       var a = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([element.location.longitude, element.location.latitude])),
       });
-      //   a.setStyle(
-      //     new ol.style.Style({
-      //       image: new ol.style.Icon({
-      //         color: "#8959A8",
-      //         crossOrigin: "anonymous",
+      switch (element.type) {
+        case "mieszane":
+          setStyle(a, "#000000");
+          break;
+        case "plastik":
+          setStyle(a, "#fde047");
+          break;
+        case "papier":
+          setStyle(a, "#1e40af");
+          break;
+        case "szklo":
+          setStyle(a, "#16a34a");
+          break;
+        case "bio":
+          setStyle(a, "#713f12");
+          break;
+        default:
+          setStyle(a, "#ff0000");
+          break;
+      }
 
-      //         imgSize: [20, 20],
-      //         src: "img/bin.png",
-      //       }),
-      //     })
-      //   );
       source.addFeature(a);
     });
   },
 });
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(
-    (cor) => {
-      cords.lon = cor.coords.longitude;
-      cords.lan = cor.coords.latitude;
-
-      view.animate({
-        center: ol.proj.fromLonLat([cords.lon, cords.lan]),
-        duration: 500,
-      });
-    },
-    (err) => {}
-  );
-}
 //widok
 const view = new ol.View({
   center: ol.proj.fromLonLat([cords.lon, cords.lan]),
@@ -161,6 +193,9 @@ var map = new ol.Map({
   ],
   view: view,
 });
+map.once("postrender", function (event) {
+  $("#Loading").remove();
+});
 
 var draw = new ol.interaction.Draw({
   source: currentSource,
@@ -173,6 +208,7 @@ draw.on("drawend", function (e) {
 });
 var currentKosz = new Kosz();
 draw.on("drawstart", function (e) {
+  console.log(point);
   if (point) {
     var features = currentSource.getFeatures();
     var lastFeature = features[features.length - 1];
@@ -236,10 +272,11 @@ $("#save").click(function (e) {
     var features = currentSource.getFeatures();
     var lastFeature = features[features.length - 1];
     currentSource.removeFeature(lastFeature);
-    new ol.Feature({
+    var a = new ol.Feature({
       geometry: new ol.geom.Point(ol.proj.fromLonLat([currentKosz.pos[0], currentKosz.pos[1]])),
     });
-    source.addFeature();
+    setStyle(a, getColor(currentKosz.type));
+    source.addFeature(a);
     point = false;
   }
 });

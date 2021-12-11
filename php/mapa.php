@@ -20,7 +20,7 @@ require_once("header.php");
     <h1 class="w-full text-3xl font-bold text-center text-pink-500">Mapa</h1>
     <h2 class="w-full text-xl font-bold text-center text-blue-500">(Lokalizacje śmietników)</h2>
     <div id="map" class="map w-full h-60 mapa">
-
+        <p id="Loading" class="absolute -z-50">ŁADOWANIE...</p>
 
     </div>
     <input type="checkbox" id="add">
@@ -28,7 +28,12 @@ require_once("header.php");
     <input type=" text" id="latitude" pattern="[0-9.]+" placeholder="latitude" class="w-full h-10 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-xl text-xl">
     <!-- obrazek<input type="file" id=""> -->
     <select id="type" class="bg-gray-400 p-1 rounded-md">
-        <option value="kosz">kosz</option>
+        <option value="mieszane" class="bg-black">mieszane</option>
+        <option value="papier" class="bg-blue-800">papier</option>
+        <option value="szklo" class="bg-green-600 text-black">szkło</option>
+        <option value="plastik" class="bg-yellow-300 text-black">metale i plastik</option>
+        <option value="bio" class="bg-yellow-900">Biodegradowalne</option>
+
     </select>
     <!-- dodatkowe informacje<textarea id="" cols="30" rows="10" required></textarea> -->
     <input type="button" value="Zapisz" id="save" class="w-full h-10 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-xl pb-4 text-xl">

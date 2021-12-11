@@ -13,9 +13,9 @@
 </head>
 
 <body class="p-0 m-0 min-h-screen h-fit overflow-x-hidden dark:bg-gray-800 bg-gray-300 ">
-    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-full items-center overflow-hidden flex gap-2">
+    <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-screen items-center overflow-hidden flex gap-2">
         <!-- paprotka -->
-        <svg class="h-16 w-16 " style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <svg class="h-16 w-16 ml-1" style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
                 <g transform="matrix(4.16667,0,0,4.16667,-606.319,-813.773)">
                     <path d="M263.6,266C266.4,264.7 268.4,262 268.6,258.7C268.9,253.9 265.2,251.2 260.5,250.9C257.1,250.7 252.9,253.5 250.2,255.2C240.6,261.4 233.1,263 227.9,264.1C226,264.5 224.1,264.9 222.1,264.9C222.2,265 248,274.4 263.6,266Z" style="fill:rgb(59,130,246);fill-rule:nonzero;" />
@@ -67,7 +67,7 @@
         </svg> -->
 
         <!-- nav bar -->
-        <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 mr-5 ">
+        <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 -mr-5 ">
             <div class="openMenu"><i class="fa fa-bars dark:text-white "></i></div>
             <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap gap-2 px-2">
                 <!-- darkmode switch -->
@@ -90,10 +90,10 @@
                 ?>
                 <li class="flex justify-center rounded-3xl"><a href="index.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'index.php' == $URI) {
                                                                                                                                                         echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
-                                                                                                                                                    } ?>">Home</a></li>
+                                                                                                                                                    } ?>">Strona Główna</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'mapa.php' == $URI) {
                                                                                                                                                         echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
-                                                                                                                                                    } ?>">Mapa</a></li>
+                                                                                                                                                    } ?>">Mapa Koszy</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'blog.php' == $URI) {
                                                                                                                                                         echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                     } ?>">Blog</a></li>
@@ -115,7 +115,7 @@
             </ul>
         </nav>
         <!-- paprotka -->
-        <svg class="h-16 w-16 absolute right-0 z-0" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <svg class="h-16 w-16 mr-3" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
                 <g transform="matrix(4.16667,0,0,4.16667,-606.319,-813.773)">
                     <path d="M263.6,266C266.4,264.7 268.4,262 268.6,258.7C268.9,253.9 265.2,251.2 260.5,250.9C257.1,250.7 252.9,253.5 250.2,255.2C240.6,261.4 233.1,263 227.9,264.1C226,264.5 224.1,264.9 222.1,264.9C222.2,265 248,274.4 263.6,266Z" style="fill:#f472b6;fill-rule:nonzero;" />
@@ -157,5 +157,5 @@
         </svg>
     </header>
     <!-- gradientowa linia -->
-    <div class="w-100% h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
-    <div class=" justify-center min-h-screen overflow-x-hidden h-full w-screen p-5 dark:bg-gray-800  text-pink-300 bg-gray-300 gap-6 dark:text-gray-200 flex flex-wrap">
+    <div class="w-screen h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
+    <div class="justify-evenly min-h-screen h-full w-screen p-5 dark:bg-gray-800 text-pink-300 bg-gray-300 dark:text-gray-200 flex flex-wrap">
