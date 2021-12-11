@@ -55,7 +55,7 @@ class geo {
     source.addFeature(this.accuracyFeature);
     view.animate({
       center: this.geo.getPosition(),
-      duration: 2000,
+      duration: 500,
     });
   }
   stop() {
@@ -63,7 +63,7 @@ class geo {
     source.removeFeature(this.accuracyFeature);
   }
 }
-class RotateNorthControl extends ol.control.Control {
+class Location extends ol.control.Control {
   constructor(opt_options) {
     const options = opt_options || {};
 
@@ -71,7 +71,7 @@ class RotateNorthControl extends ol.control.Control {
     button.innerHTML = "P";
 
     const element = document.createElement("div");
-    element.className = "rotate-north ol-unselectable ol-control";
+    element.className = "LocationBtn ol-unselectable ol-control";
     element.appendChild(button);
 
     super({
@@ -150,7 +150,7 @@ const currentVector = new ol.layer.Vector({
   source: currentSource,
 });
 var map = new ol.Map({
-  controls: ol.control.defaults().extend([new RotateNorthControl()]),
+  controls: ol.control.defaults().extend([new Location()]),
   target: "map",
   layers: [
     new ol.layer.Tile({

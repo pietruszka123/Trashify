@@ -4,12 +4,12 @@ require_once("header.php");
 <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css">
 <style>
-    .rotate-north {
+    .LocationBtn {
         top: 65px;
         left: .5em;
     }
 
-    .ol-touch .rotate-north {
+    .ol-touch .LocationBtn {
         top: 80px;
     }
 </style>
