@@ -1,3 +1,48 @@
+<?php
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'smietnik');
+$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+
+
+/* 
+if (isset($_COOKIE['token']) &&  $_COOKIE['token'] != "notSet" && isTokenValid($_COOKIE['token']) && $_SERVER['REQUEST_URI'] == 'login.php')
+{ //If the token is valid, then sends you to the index page (if already not somewhere else than login page)
+    header("Location: index.php");
+}
+else if (isset($_COOKIE['token']) &&  $_COOKIE['token'] != "notSet" && isTokenValid($_COOKIE['token']))
+{
+    ;
+}
+else if ($_SERVER['REQUEST_URI'] != '/login.php')
+{ //If you don't have a cookie token then sets it to "notSet" and sends you to the login page if you're not there
+    setcookie("token", "notSet", 0, "/");
+    header("Location: login.php");
+}
+else
+{ //If you don't have a cookie token then sets it to "notSet"
+    setcookie("token", "notSet", 0, "/");
+}
+
+
+
+//Set cookie value if available
+if (isset($_SESSION['token']) && isset($_SESSION['rememberMe']))
+{
+    setcookie("token", $_SESSION['token'], time() + (3600 * 24 * 31 * 12), "/");
+}
+else if (isset($_SESSION['token']) && !isset($_SESSION['rememberMe']))
+{
+    setcookie("token", $_SESSION['token'], 0, "/");
+}
+
+//Dump these values
+$_SESSION['token'] = NULL;
+$_SESSION['rememberMe'] = NULL; */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,14 +102,6 @@
         </svg>
 
         <h1 class="text-2xl py-0.5 float-left">Trash dooter</h1>
-        <!-- 
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 80 80" class="h-16 w-16 py-1 yin">
-            <circle r="39" fill="#fff" />
-            <path fill="#4bb748" d="M0,38a38,38 0 0 1 0,-76a19,19 0 0 1 0,38a19,19 0 0 0 0,38" />
-            <circle r="5" cy="19" fill="#4bb748" />
-            <circle r="5" cy="-19" fill="#fff" />
-        </svg> -->
 
         <!-- nav bar -->
         <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 -mr-5 ">
@@ -105,7 +142,7 @@
                                                                                                                                                     } ?>">Twórcy</a></li>
                 <?php
                 if ($beg . 'login.php' != $URI) {
-                    echo '<li class="flex justify-center rounded-3xl"><button class=" text-weight-bold w-full text-center dark:hover:bg-pink-400" onclick="document.cookie = \'token=; path=/; expires=Thu, 01 Jan 1970\'; location.reload();">Wyloguj</button></li>';
+                    echo '<li class="flex justify-center rounded-3xl"><a href="" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400">Wyloguj</a></li>';
                 } ?>
 
 
