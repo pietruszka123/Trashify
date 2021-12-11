@@ -1,5 +1,5 @@
 </div>
-<footer class="w-screen bottom-0 h-20 dark:text-gray-100 text-pink-300 bg-indigo-800 dark:bg-gray-900 items-self-end flex justify-center ">
+<footer class="w-screen relative h-20 dark:text-gray-100 text-pink-300 bg-indigo-800 dark:bg-gray-900 items-self-end flex justify-center ">
     <span class="items-end flex mb-4 gap-2">
         <a href="">O recyklingu </a>|
         <a href="">Artykuły </a>|

@@ -144,7 +144,7 @@ userLogin();
 <!-- formularz -->
 <form method="POST" class="w-70 mt-28 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600 justify-center flex flex-wrap text-center p-4 ">
         <!-- nagłówek -->
-    <h1 class="text-4xl font-bold pt-1 mb-2">Zaloguj się</h1>
+    <h1 class="text-4xl font-bold pt-1 mb-2 text-pink-500">Zaloguj się</h1>
 
     <!-- dane urzytkownika -->
         <input type="email" id="email" name="email" class="w-full h-10 p-3 m-2 mb-0 bg-gray-500 text-white rounded-xl focus:outline-none text-xl" placeholder="Email">
