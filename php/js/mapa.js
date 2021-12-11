@@ -158,6 +158,19 @@ $.ajax({
         case "bio":
           setStyle(a, "#713f12");
           break;
+        case "baterie":
+          a.setStyle(
+            new ol.style.Style({
+              image: new ol.style.Icon({
+                color: "#ffffff",
+                alpha: 0,
+                crossOrigin: "anonymous",
+                imgSize: [20, 20],
+                src: "img/test.png",
+              }),
+            })
+          );
+          break;
         default:
           setStyle(a, "#ff0000");
           break;

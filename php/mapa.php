@@ -33,7 +33,8 @@ require_once("header.php");
         <option value="szklo" class="bg-green-600 text-black">szkło</option>
         <option value="plastik" class="bg-yellow-300 text-black">metale i plastik</option>
         <option value="bio" class="bg-yellow-900">Biodegradowalne</option>
-
+        <option value="baterie">baterie</option>
+        <option value="leki">leki</option>
     </select>
     <!-- dodatkowe informacje<textarea id="" cols="30" rows="10" required></textarea> -->
     <input type="button" value="Zapisz" id="save" class="w-full h-10 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-xl pb-4 text-xl">
