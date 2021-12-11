@@ -13,8 +13,10 @@ if ($stmt = $mysqli->prepare($sql)) {
         $row = $result->fetch_assoc();
         if (isset($row)) {
             $r["status"] = true;
-            $r["data"] = $row;
+            $r["data"] =  $row;
+            $r["data"]["productInfo"] = json_decode($row["productInfo"]);
         }
     }
 }
+
 echo json_encode($r);

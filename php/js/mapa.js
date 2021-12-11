@@ -1,21 +1,47 @@
-function getColor(t) {
+function setStyleE(a, t) {
   switch (t) {
     case "mieszane":
-      return "#000000";
+      setStyle(a, "#000000");
       break;
     case "plastik":
-      return "#fde047";
+      setStyle(a, "#fde047");
       break;
     case "papier":
-      return "#1e40af";
+      setStyle(a, "#1e40af");
       break;
     case "szklo":
-      return "#16a34a";
+      setStyle(a, "#16a34a");
       break;
     case "bio":
-      return "#713f12";
+      setStyle(a, "#713f12");
+    case "baterie":
+      a.setStyle(
+        new ol.style.Style({
+          image: new ol.style.Icon({
+            color: "#ffffff",
+            alpha: 0,
+            crossOrigin: "anonymous",
+            imgSize: [20, 20],
+            src: "img/test.png",
+          }),
+        })
+      );
+      break;
+    case "leki":
+      a.setStyle(
+        new ol.style.Style({
+          image: new ol.style.Icon({
+            color: "#ffffff",
+            alpha: 0,
+            crossOrigin: "anonymous",
+            imgSize: [20, 20],
+            src: "img/test.png",
+          }),
+        })
+      );
+      break;
     default:
-      return "#ff0000";
+      setStyle(a, "#ff0000");
       break;
   }
 }
@@ -142,39 +168,7 @@ $.ajax({
       var a = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([element.location.longitude, element.location.latitude])),
       });
-      switch (element.type) {
-        case "mieszane":
-          setStyle(a, "#000000");
-          break;
-        case "plastik":
-          setStyle(a, "#fde047");
-          break;
-        case "papier":
-          setStyle(a, "#1e40af");
-          break;
-        case "szklo":
-          setStyle(a, "#16a34a");
-          break;
-        case "bio":
-          setStyle(a, "#713f12");
-          break;
-        case "baterie":
-          a.setStyle(
-            new ol.style.Style({
-              image: new ol.style.Icon({
-                color: "#ffffff",
-                alpha: 0,
-                crossOrigin: "anonymous",
-                imgSize: [20, 20],
-                src: "img/test.png",
-              }),
-            })
-          );
-          break;
-        default:
-          setStyle(a, "#ff0000");
-          break;
-      }
+      setStyleE(a, element.type);
 
       source.addFeature(a);
     });
@@ -288,7 +282,7 @@ $("#save").click(function (e) {
     var a = new ol.Feature({
       geometry: new ol.geom.Point(ol.proj.fromLonLat([currentKosz.pos[0], currentKosz.pos[1]])),
     });
-    setStyle(a, getColor(currentKosz.type));
+    setStyleE(a, currentKosz.type);
     source.addFeature(a);
     point = false;
   }

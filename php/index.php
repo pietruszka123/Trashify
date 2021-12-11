@@ -1,5 +1,4 @@
 <?php
-require_once("functions.php");
 require_once("header.php");
 ?>
 
@@ -36,18 +35,25 @@ require_once("header.php");
 <div id="productInfoEdit" class="relative my-3 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
     <!-- ZDJECIE -->
     <!-- NAZWA -->
-    <h1 class="text-xl font-semibold -mb-3">DILDO</h1><img class="absolute h-32 w-32 right-0 top-0 rounded-tr-2xl rounded-bl-2xl" src="https://lh3.googleusercontent.com/proxy/vZL_wYDAaX3J-6eYtbUrwDaYLfhxFHcozzZuAlpk3wb14fWEiFjFHCrJg6KREqhF9xxcGagf4yz8JQW1_J1NYGoCuCIgYv0vblBR0gtwGTfoG6lel1TeasvIv6lQSiiYQlWa0n6k1Wg-vw" alt="">
+    <h1 class="text-xl font-semibold -mb-3"></h1><img id="ProductImage" class="absolute h-32 w-32 right-0 top-0 rounded-tr-2xl rounded-bl-2xl" src="https://lh3.googleusercontent.com/proxy/vZL_wYDAaX3J-6eYtbUrwDaYLfhxFHcozzZuAlpk3wb14fWEiFjFHCrJg6KREqhF9xxcGagf4yz8JQW1_J1NYGoCuCIgYv0vblBR0gtwGTfoG6lel1TeasvIv6lQSiiYQlWa0n6k1Wg-vw" alt="">
     <!-- kod produktu(takie male) -->
     <p class="inline text-xs text-gray-400 ">kod: </p>
     <p class="inline text-xs text-gray-400" id="productInfoCode">6942069</p>
     <!-- MATERIAL OPAKOWANIA -->
     <h2>Materiał opakowania: </h2>
-    <h2>SYLIKON</h2>
+    <h2 id="packagingType"></h2>
     <!-- SPOSOB RECYKLINGU -->
     <h2>Sposób recyklingu:</h2>
-    <p>WSADŹ SE W DUPE :D</p>
-
-
+    <p id="recycling"></p>
+    <!-- <select id="packagingType">
+        <option value="mieszane">mieszane</option>
+        <option value="papier">papier</option>
+        <option value="szklo">szkło</option>
+        <option value="plastik">metale i plastik</option>
+        <option value="bio">jedzenie</option>
+        <option value="baterie">baterie</option>
+        <option value="leki">leki</option>
+    </select> -->
 </div>
 
 <!-- Historia -->

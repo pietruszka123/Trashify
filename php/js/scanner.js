@@ -33,6 +33,15 @@ window.addEventListener("load", function () {
       dataType: "json",
       success: function (response) {
         console.log(response);
+        console.log(response.data);
+        var productInfoCode = document.getElementById("productInfoCode");
+        var recycling = document.getElementById("recycling");
+        var packagingType = document.getElementById("packagingType");
+        var ProductImage = document.getElementById("ProductImage");
+        productInfoCode.textContent = response.data.ProductCode;
+        packagingType.textContent = response.data.productInfo.packagingType;
+        recycling.textContent = response.data.productInfo.packagingType;
+        ProductImage.src = response.data.productInfo.image_url;
       },
     });
   }
