@@ -6,7 +6,7 @@ require_once("header.php");
 
 <!-- container -->
 
-<div id="map" class="map w-full h-full">
+<div id="map" class="map w-80 h-80">
 
 </div>
 <script src="./js/mapa.js"></script>

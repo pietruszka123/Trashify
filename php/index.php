@@ -16,7 +16,7 @@ require_once("header.php");
         <input class="toggle__input" name="" type="checkbox" id="startvideo">
         <div class="toggle__fill"></div>
 
-        
+
         <!-- wybór kamerki -->
         <select class="bg-gray-500 h-8 p-4 focus:outline-none text-white rounded-xl mx-5" id="sourceSelect" hidden></select>
     </label>
@@ -30,12 +30,12 @@ require_once("header.php");
     </label>
 
 </div>
-<!-- Historia -->
+<!-- informacje o produkcie -->
 <div class="dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro sequi blanditiis reiciendis voluptates quis autem et voluptatem nisi sit tempore ipsum velit voluptate ullam, perferendis hic exercitationem quam incidunt?
 </div>
 
-<!-- Kalendarz -->
+<!-- Historia -->
 <div class="dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro sequi blanditiis reiciendis voluptates quis autem et voluptatem nisi sit tempore ipsum velit voluptate ullam, perferendis hic exercitationem quam incidunt?
 </div>
