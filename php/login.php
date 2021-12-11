@@ -1,5 +1,7 @@
 
-<?php require_once("header.php");
+<?php
+require_once("functions.php");
+
 // Logs in the user
 function userLogin()
 {
@@ -75,69 +77,9 @@ function userLogin()
         }
     }
 }
-//Checks if the user token is still valid
-function isTokenValid($cookie)
-{
-    global $mysqli;
-
-    $sql = "SELECT id, token FROM `users` WHERE token = ?";
-
-    if ($stmt = $mysqli->prepare($sql))
-    {
-        $stmt->bind_param("s", $cookie);
-        if ($stmt->execute())
-        {
-            $result = $stmt->get_result();
-
-            if ($result->num_rows == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-    }
-}
-
-// Looks if the email given by the user is correct
-function emailCorrect($email)
-{
-    if (filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-// Looks if the password given by the user is correct
-function passwordCorrect($password)
-{
-    $correctness = preg_match('/^[a-zA-Z0-9]{3,64}$/', $password);
-
-    if ($correctness == 1)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-// Generates a random token
-function generateToken()
-{
-    $bytes = random_bytes(64);
-    return bin2hex($bytes);
-}
 
 userLogin();
-
+require_once("header.php");
 ?>
 
 
