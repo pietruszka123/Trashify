@@ -265,24 +265,7 @@ var draw = new ol.interaction.Draw({
   type: "Point",
 });
 var point = false;
-draw.on("drawend", function (e) {
-  //console.log(this);
-  //sendAddKosz(ol.proj.toLonLat(e.feature.getProperties().geometry.flatCoordinates));
-});
-var currentKosz = new Kosz();
-draw.on("drawstart", function (e) {
-  console.log(point);
-  if (point) {
-    var features = currentSource.getFeatures();
-    var lastFeature = features[features.length - 1];
-    currentSource.removeFeature(lastFeature);
-  }
-  point = true;
-  currentKosz.pos = ol.proj.toLonLat(e.feature.getProperties().geometry.flatCoordinates);
-  longitude.value = currentKosz.pos[0];
-  latitude.value = currentKosz.pos[1];
-});
-
+initDraw();
 $("#add").change(function (e) {
   e.preventDefault();
   if (this.checked) {
@@ -371,3 +354,116 @@ if (args && args.data) {
 } else {
   GetBins();
 }
+function getStyle(color) {
+  return new ol.style.Style({
+    image: new ol.style.Circle({
+      radius: 6,
+      fill: new ol.style.Fill({
+        color: color,
+      }),
+      stroke: new ol.style.Stroke({
+        color: "#fff",
+        width: 2,
+      }),
+    }),
+  });
+}
+function initDraw() {
+  draw.on("drawend", function (e) {
+    //console.log(this);
+    //sendAddKosz(ol.proj.toLonLat(e.feature.getProperties().geometry.flatCoordinates));
+  });
+  var currentKosz = new Kosz();
+  draw.on("drawstart", function (e) {
+    console.log(point);
+    if (point) {
+      var features = currentSource.getFeatures();
+      var lastFeature = features[features.length - 1];
+      currentSource.removeFeature(lastFeature);
+    }
+    point = true;
+    currentKosz.pos = ol.proj.toLonLat(e.feature.getProperties().geometry.flatCoordinates);
+    longitude.value = currentKosz.pos[0];
+    latitude.value = currentKosz.pos[1];
+  });
+}
+// document.getElementById("type").addEventListener("change", function () {
+//   console.log("?");
+//   map.removeInteraction(draw);
+//   switch (this.value) {
+//     case "mieszane":
+//       draw = new ol.interaction.Draw({
+//         source: currentSource,
+//         type: "Point",
+//         style: getStyle("#000000"),
+//       });
+
+//       break;
+//     case "plastik":
+//       draw = new ol.interaction.Draw({
+//         source: currentSource,
+//         type: "Point",
+//         style: getStyle("#fde047"),
+//       });
+//       break;
+//     case "papier":
+//       draw = new ol.interaction.Draw({
+//         source: currentSource,
+//         type: "Point",
+//         style: getStyle("#1e40af"),
+//       });
+//       break;
+//     case "szklo":
+//       draw = new ol.interaction.Draw({
+//         source: currentSource,
+//         type: "Point",
+//         style: getStyle("#16a34a"),
+//       });
+//       break;
+//     case "bio":
+//       draw = new ol.interaction.Draw({
+//         source: currentSource,
+//         type: "Point",
+//         style: getStyle("#713f12"),
+//       });
+//     case "baterie":
+//       draw = new ol.interaction.Draw({
+//         source: currentSource,
+//         type: "Point",
+//         style: new ol.style.Style({
+//           image: new ol.style.Icon({
+//             color: "#ffffff",
+//             crossOrigin: "anonymous",
+//             imgSize: [20, 20],
+//             src: "img/baterie.svg",
+//           }),
+//         }),
+//       });
+
+//       break;
+//     case "leki":
+//       draw = new ol.interaction.Draw({
+//         source: currentSource,
+//         type: "Point",
+//         style: new ol.style.Style({
+//           image: new ol.style.Icon({
+//             color: "#ffffff",
+//             crossOrigin: "anonymous",
+//             imgSize: [20, 20],
+//             src: "img/leki.svg",
+//           }),
+//         }),
+//       });
+
+//       break;
+//     default:
+//       draw = new ol.interaction.Draw({
+//         source: currentSource,
+//         type: "Point",
+//         style: getStyle("#ff0000"),
+//       });
+//       break;
+//   }
+//   map.addInteraction(draw);
+//   initDraw();
+// });
