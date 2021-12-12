@@ -23,10 +23,18 @@ require_once("header.php");
         <p id="Loading" class="absolute -z-50">ŁADOWANIE...</p>
 
     </div>
-    <label for="" class="flex w-full gap-4 text-center ite">
-        
-        <p class="font-bold ml-2 bg-gray-500 px-2 rounded-md">dodaj kosz</p>
-        <input type="checkbox" id="add" class="h-6 w-6 font-bold bg-gray-500"></label>
+    <?php
+    if (isset($_GET["data"])) {
+    ?>
+        <input type="button" id="showAllBins" value="Pokaż wszystkie kosze">
+    <?php
+    }
+    ?>
+    <label for="add" class="flex w-full gap-4 text-center ite">
+        <p class="select-none hover:cursor-pointer cursor-default font-bold ml-2 bg-gray-500 px-2 rounded-md">dodaj kosz</p>
+        <input type="checkbox" id="add" class="hover:cursor-pointer cursor-default h-6 w-6 font-bold bg-gray-500" hidden>
+    </label>
+    <div id="AddBinCont" style="display: none;">
         <label class="flex w-full gap-4 items-center">
             <p class="font-bold bg-gray-500 p-1 rounded-md ml-2 px-3">Rodzaj kosza</p>
             <select id="type" class="bg-gray-500 font-bold p-1 rounded-md">
@@ -41,13 +49,13 @@ require_once("header.php");
                 </option>
             </select>
         </label>
-    </label>
-    <input type="text" class="w-full h-10 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-md text-xl" placeholder="longitude" id="longitude" pattern="[0-9.]+">
-    <input type=" text" id="latitude" pattern="[0-9.]+" placeholder="latitude" class="w-full h-10 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-md text-xl">
-    <!-- obrazek<input type="file" id=""> -->
+        <input type="text" class="w-full h-10 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-md text-xl" placeholder="longitude" id="longitude" pattern="[0-9.]+">
+        <input type=" text" id="latitude" pattern="[0-9.]+" placeholder="latitude" class="w-full h-10 p-3 m-2 bg-gray-500 text-white focus:outline-none rounded-md text-xl">
+        <!-- obrazek<input type="file" id=""> -->
 
-    <!-- dodatkowe informacje<textarea id="" cols="30" rows="10" required></textarea> -->
-    <input type="button" value="Zapisz" id="save" class="w-fit mx-auto py-1/2 h-fit p-3 m-2 bg-gray-500 text-pink-300 font-bold focus:outline-none rounded-xl pb-4 text-xl">
+        <!-- dodatkowe informacje<textarea id="" cols="30" rows="10" required></textarea> -->
+        <input type="button" value="Zapisz" id="save" class="w-fit mx-auto py-1/2 h-fit p-3 m-2 bg-gray-500 text-pink-300 font-bold focus:outline-none rounded-xl pb-4 text-xl">
+    </div>
     <script src="./js/mapa.js"></script>
     <!-- stopka -->
 </div>

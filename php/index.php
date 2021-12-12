@@ -33,27 +33,27 @@ require_once("header.php");
     <img class=" h-60 w-60 rounded-tr-2xl rounded-bl-2xl" src="" alt="">
     <!-- kod produktu(takie male) -->
     <label class="mt-2 w-full my-auto">
-<p class="inline text-s text-gray-300  font-semibold w-1/5 mt-2">kod: </p>
-    <input type="text" class="inline text-s bg-gray-500 mx-2 text-white h-4 focus:outline-none pl-1  rounded-md">
+        <p class="inline text-s text-gray-300  font-semibold w-1/5 mt-2">kod: </p>
+        <input type="text" class="inline text-s bg-gray-500 mx-2 text-white h-4 focus:outline-none pl-1  rounded-md">
     </label>
     <!-- MATERIAL OPAKOWANIA -->
     <h2 class="text-gray-300 font-semibold text-lg">Materiał opakowania: </h2>
     <input type="text" id="packagingTypeE" class="w-full bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md pl-2">
     <!-- SPOSOB RECYKLINGU -->
-    <h2  class="text-gray-300 font-semibold text-lg">Sposób recyklingu:</h2>
+    <h2 class="text-gray-300 font-semibold text-lg">Sposób recyklingu:</h2>
     <input type="text" id="recyclingE" class="w-full bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md mb-2 pl-2">
     <label class="flex w-full gap-4 items-center">
-            <p class="font-bold">Rodzaj kosza</p>
-            <select id="type" class="bg-gray-500 font-bold p-1 w-28 rounded-md">
-                <option value="mieszane" class="bg-blue-400 sm:w-15 px-1 py-0.5">mieszane</option>
-                <option value="papier" class="bg-blue-800 px-1 py-0.5">papier</option>
-                <option value="szklo" class="bg-black text-white px-1 py-0.5">szkło</option>
-                <option value="plastik" class="bg-yellow-300 text-black px-1 py-0.5">metale i plastik</option>
-                <option value="bio" class="bg-green-800 px-1 py-0.5">Biodegradowalne</option>
-                <option value="baterie">baterie</option>
-                <option value="leki " class="bg-red-700 focus:outline-none px-1 py-0.5">Lerstwa +</option>
-            </select>
-        </label>
+        <p class="font-bold">Rodzaj kosza</p>
+        <select id="type" class="bg-gray-500 font-bold p-1 w-28 rounded-md">
+            <option value="mieszane" class="bg-blue-400 sm:w-15 px-1 py-0.5">mieszane</option>
+            <option value="papier" class="bg-blue-800 px-1 py-0.5">papier</option>
+            <option value="szklo" class="bg-black text-white px-1 py-0.5">szkło</option>
+            <option value="plastik" class="bg-yellow-300 text-black px-1 py-0.5">metale i plastik</option>
+            <option value="bio" class="bg-green-800 px-1 py-0.5">Biodegradowalne</option>
+            <option value="baterie">baterie</option>
+            <option value="leki " class="bg-red-700 focus:outline-none px-1 py-0.5">Lerstwa +</option>
+        </select>
+    </label>
     <button id="saveChanges" class="bg-gray-500 rounded-md w-fit h-fit p-2 text-gray-200 font-bold mt-4 mx-auto">Dodaj Produkt</button>
 </div>
 <div id="productInfo" class="relative my-3 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
@@ -69,13 +69,12 @@ require_once("header.php");
     <!-- SPOSOB RECYKLINGU -->
     <h2>Sposób recyklingu:</h2>
     <h2 id="recycling"></h2>
-    <h2>najbliszy kosz</h2>
-    <input type="button" id="clossetBin" value="znajdz">
+    <button id="clossetBin">znajdz najbliszy kosz</button>
 </div>
 
 <!-- Historia -->
-<!-- <div class="my-3 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro sequi blanditiis reiciendis voluptates quis autem et voluptatem nisi sit tempore ipsum velit voluptate ullam, perferendis hic exercitationem quam incidunt?
+<!-- <div class=" my-3 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio porro sequi blanditiis reiciendis voluptates quis autem et voluptatem nisi sit tempore ipsum velit voluptate ullam, perferendis hic exercitationem quam incidunt?
 </div> -->
 <script src="./js/scanner.js"></script>
 <!-- stopka -->

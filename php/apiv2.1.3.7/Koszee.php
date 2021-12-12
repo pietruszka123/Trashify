@@ -8,7 +8,7 @@ $sql = "SELECT * FROM trashcans";
 
 $data = json_decode(file_get_contents('php://input'), true);
 if (isset($data["type"])) {
-    $sql .= " WHERE trashCanType = '" . $data["type"] . "'";
+    $sql .= " WHERE trashCanType = '" . $data["type"] . "';";
 }
 $r = ["status" => false];
 $result = $mysqli->query($sql);

@@ -30,14 +30,29 @@ function GetBins(type, location) {
     dataType: "json",
     success: function (response) {
       console.log(response);
+      var min = 0;
+      var e = response.data[0];
       response.data.forEach((element) => {
         var a = new ol.Feature({
           geometry: new ol.geom.Point(ol.proj.fromLonLat([element.location.longitude, element.location.latitude])),
         });
+        if (type && location) {
+          var dis = Math.sqrt(Math.pow(element.location.longitude - location[0], 2) + Math.pow(element.location.latitude - location[1], 2));
+          if (min > dis) {
+            min = dis;
+            e = element;
+          }
+        }
         setStyleE(a, element.type);
-
         source.addFeature(a);
       });
+      if (type && location) {
+        view.animate({
+          center: ol.proj.fromLonLat([e.location.longitude, e.location.latitude]),
+          duration: 500,
+          zoom: 17,
+        });
+      }
     },
   });
 }
@@ -256,12 +271,16 @@ draw.on("drawstart", function (e) {
 $("#add").change(function (e) {
   e.preventDefault();
   if (this.checked) {
+    $("#showAllBins").remove();
+    console.log(this.checked);
+    GetBins();
     map.addInteraction(draw);
   } else {
     map.removeInteraction(draw);
     currentSource.clear();
     point = false;
   }
+  $("#AddBinCont").toggle(this.checked);
 });
 
 //Form
@@ -314,20 +333,26 @@ $("#save").click(function (e) {
   }
 });
 var args = parseURLParams(window.location.href);
-if (args.data) {
+if (args && args.data) {
+  $("#showAllBins").click(function (e) {
+    console.log(this);
+    source.clear();
+    GetBins();
+    $(this).remove();
+  });
   console.log(JSON.parse(atob(args.data)));
-  GetBins(JSON.parse(atob(args.data)));
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (cor) => {
-        cords.lon = cor.coords.longitude;
-        cords.lan = cor.coords.latitude;
-
-        view.animate({
-          center: ol.proj.fromLonLat([cords.lon, cords.lan]),
-          duration: 500,
-          zoom: 17,
-        });
+        //cords.lon = cor.coords.longitude;
+        //cords.lan = cor.coords.latitude;
+        GetBins(JSON.parse(atob(args.data)).type, [cor.coords.longitude, cor.coords.latitude]);
+        // view.animate({
+        //   center: ol.proj.fromLonLat([cords.lon, cords.lan]),
+        //  duration: 500,
+        //   zoom: 17,
+        //});
       },
       (err) => {}
     );
