@@ -125,24 +125,24 @@ $_SESSION['rememberMe'] = NULL; */
                 $URI = $_SERVER['REQUEST_URI'];
                 $beg = "/"; //'/Konkurs4/php/';
                 ?>
-                <li class="flex justify-center rounded-3xl"><a href="index.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'index.php' == $URI) {
-                                                                                                                                                        echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
+                <li class="flex justify-center rounded-3xl font-bold"><a href="index.php" class=" font-bold  w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'index.php' == $URI) {
+                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                     } ?>">Strona Główna</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'mapa.php' == $URI) {
-                                                                                                                                                        echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
+                <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" font-bold  w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'mapa.php' == $URI) {
+                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                     } ?>">Mapa Koszy</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'blog.php' == $URI) {
-                                                                                                                                                        echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
-                                                                                                                                                    } ?>">Blog</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'informacje.php' == $URI) {
-                                                                                                                                                            echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
+                <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" font-bold w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'blog.php' == $URI) {
+                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
+                                                                                                                                                    } ?>">Kalendarz</a></li>
+                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" font-bold  w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'informacje.php' == $URI) {
+                                                                                                                                                            echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                         } ?>">Artykuły</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'tworcy.php' == $URI) {
-                                                                                                                                                        echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
+                <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" font-bold  w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'tworcy.php' == $URI) {
+                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                     } ?>">Autorzy</a></li>
                 <?php
                 if ($beg . 'login.php' != $URI) {
-                    echo '<li class="flex justify-center rounded-3xl"><a href="" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400">Wyloguj</a></li>';
+                    echo '<li class="flex justify-center rounded-3xl"><a href="" class=" font-bold  w-full text-center dark:hover:bg-pink-500">Wyloguj</a></li>';
                 } ?>
 
 
