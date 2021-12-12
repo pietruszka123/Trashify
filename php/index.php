@@ -31,22 +31,23 @@ require_once("header.php");
 
 </div>
 <!-- informacje o produkcie -->
-<div id="productInfoEdit" class="relative my-3 flex flex-wrap justify-center gap-0 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit" style="display: none;">
+<div id="productInfoEdit" class="relative my-3 flex flex-wrap gap-2 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-72 h-fit" style="display: none;">
     <!-- NAZWA -->
-    <input class="text-xl font-semibold -mb-3" id="ProductnameE">
-    <img id="ProductImageE" class=" h-60 w-60 rounded-tr-2xl rounded-bl-2xl" src="" alt="">
-    <input type="file" id="productImageEA" accept="image/png, image/gif, image/jpeg" />
+    <input type="text" id="ProductnameE" class="w-full mb-2 bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md pl-2">
+
+    <img id="ProductImageE" class=" h-60 w-60 justify-self-center rounded-tr-2xl mb-2 rounded-bl-2xl" src="" alt="">
+    <input type="file" id="productImageEA" class="bg-gray-500 text-white" accept="image/png, image/gif, image/jpeg" />
     <!-- kod produktu(takie male) -->
     <label class="mt-2 w-full my-auto">
-        <p class="inline text-s text-gray-300  font-semibold w-1/5 mt-2">kod: </p>
-        <input type="text" id="productInfoCodeE" class="inline text-s bg-gray-500 mx-2 text-white h-4 focus:outline-none pl-1  rounded-md">
+        <p class="inline text-s text-gray-300  font-semibold w-1/5 mt-2 p-2">kod: </p>
+        <input type="text" id="productInfoCodeE" class="inline text-s bg-gray-500 mx-2 pl-2 w-3/5 text-white h-5 focus:outline-none py-2  rounded-md">
     </label>
     <!-- MATERIAL OPAKOWANIA -->
     <h2 class="text-gray-300 font-semibold text-lg">Materiał opakowania: </h2>
     <input type="text" id="packagingTypeE" class="w-full bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md pl-2">
     <!-- SPOSOB RECYKLINGU -->
     <h2 class="text-gray-300 font-semibold text-lg">Sposób recyklingu:</h2>
-    <textarea id="recyclingE" class="w-full bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md mb-2 pl-2"></textarea>
+    <textarea id="recyclingE" class="w-full bg-gray-500 text-white h-7 focus:outline-none text-md rounded-md mb-2 pl-2"></textarea>
     <label class="flex w-full gap-4 items-center">
         <p class="font-bold">Rodzaj kosza</p>
         <select id="Rec" class="bg-gray-500 font-bold p-1 w-28 rounded-md">
@@ -59,29 +60,31 @@ require_once("header.php");
             <option value="leki " class="bg-red-700 focus:outline-none px-1 py-0.5">Lerstwa +</option>
         </select>
     </label>
-    <button id="saveChanges" class="bg-gray-500 rounded-md w-fit h-fit p-2 text-gray-200 font-bold mt-4 mx-auto">Dodaj Produkt</button>
+    <button id="cancelChanges" class="bg-gray-500 rounded-md w-fit h-fit p-2 text-red-500 font-bold mt-4 mx-auto">Anuluj</button>
+    <button id="saveChanges" class="bg-gray-500 rounded-md w-fit h-fit p-2 text-gray-200 font-bold mt-4 mx-auto">Zapisz zmiany</button>
 </div>
 
 
 
 
-<div id="productInfo" class="relative my-3 flex flex-wrap gap-0 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-96 h-fit">
+<div id="productInfo" class="relative my-3 flex flex-wrap gap-0 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-72 h-fit">
     <!-- ZDJECIE -->
     <!-- NAZWA -->
-    <h1 class="text-xl font-semibold -mb-3" id="Productname"></h1>
-    <img id="ProductImage" class="absolute ml-4 h-32 w-32 right-0 top-0 rounded-tr-xl rounded-bl-2xl" src="" alt="">
+    <h1 class="text-xl font-semibold mb-3 w-full text-center" id="Productname"></h1>
+    <img id="ProductImage" class="w-1/2 mr-2 h-1/2 rounded-tr-xl rounded-bl-2xl text-center" src="" alt="Obraz sięnie załadował">
     <!-- kod produktu(takie male) -->
-    <label class="w-full">
+    <label class="w-1/3">
         <p class="inline text-xs text-gray-400 ">kod: </p>
         <p class="inline text-xs text-gray-400" id="productInfoCode"></p>
+
+        <!-- MATERIAL OPAKOWANIA -->
+        <h2 class="w-full font-semibold -mb-1">Materiał opakowania: </h2>
+        <h2 class="text-sm w-full text-gray-300" id="packagingType"></h2>
+        <!-- SPOSOB RECYKLINGU -->
+        <h2 class="font-semibold w-full -mb-1">Sposób recyklingu:</h2>
+        <h2 class="text-sm w-full text-gray-300 mb-12" id="recycling"></h2>
     </label>
-    <!-- MATERIAL OPAKOWANIA -->
-    <h2 class="w-full font-semibold -mb-1">Materiał opakowania: </h2>
-    <h2 class="text-sm w-full text-gray-300" id="packagingType"></h2>
-    <!-- SPOSOB RECYKLINGU -->
-    <h2 class="font-semibold w-full -mb-1">Sposób recyklingu:</h2>
-    <h2 class="text-sm w-full text-gray-300 mb-12" id="recycling"></h2>
-    <button class="bg-gray-500 rounded-md w-fit h-fit p-2 text-gray-200 font-bold absolute left-0 bottom-0 bold rounded-tr-xl rounded-bl-xl" id="clossetBin">znajdz najbliszy kosz</button>
+    <button class="bg-gray-500 rounded-md w-fit h-fit p-2 text-gray-200 font-bold absolute left-0 bottom-0 bold rounded-tr-xl rounded-bl-xl" id="clossetBin">Znajdz najbliszy kosz</button>
     <button class="absolute right-0 bottom-0 bg-pink-500   w-fit h-fit p-2 text-gray-200 font-bold rounded-tl-xl rounded-br-xl " id="editProduct">Edytuj</button>
 </div>
 

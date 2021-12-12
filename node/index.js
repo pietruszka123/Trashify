@@ -21,7 +21,6 @@ app.post("/getProduct.json", (req, res, next) => {
   if (req.body && req.body.productCode) {
     getProduct(req.body.productCode)
       .then((ret) => {
-        console.log(ret);
         if (ret.status == false) {
           openfoodfacts.getProduct(req.body.productCode).then((ret) => {
             ret = JSON.parse(ret);
@@ -136,7 +135,6 @@ function getProduct(code) {
               resolve(JSON.parse(body));
             } else {
               resolve({ status: false });
-              console.log(body.toString());
             }
           });
       });

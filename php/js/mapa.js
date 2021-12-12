@@ -51,8 +51,6 @@ function GetBins(type, location) {
             e = element;
           }
         }
-        //setStyleE(a, element.type);
-        //source.addFeature(a);
         addBin([element.location.longitude, element.location.latitude], element.type);
       });
       if (type && location) {

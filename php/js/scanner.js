@@ -22,6 +22,14 @@ window.addEventListener("load", function () {
       sourceSelect.hidden = false;
     }
   });
+  function resetEdit() {
+    document.getElementById("productImageEA").value = null;
+    document.getElementById("ProductImageE").src = "";
+    document.getElementById("packagingTypeE").value = null;
+    document.getElementById("recyclingE").value = null;
+    document.getElementById("Rec").value = "mieszane";
+    document.getElementById("ProductnameE").value = "";
+  }
   function setInfo(response) {
     var productInfoCode = document.getElementById("productInfoCode");
     var recycling = document.getElementById("recycling");
@@ -35,8 +43,10 @@ window.addEventListener("load", function () {
     if (response.status == false) {
       console.log("?");
       EditMode = true;
+      resetEdit();
       $("#productInfo").hide();
       $("#productInfoEdit").show();
+
       return;
     }
     EditMode = false;
@@ -63,8 +73,8 @@ window.addEventListener("load", function () {
       $("#recyclingE").text(response.data.productInfo.rec);
     }
     productInfoCode.textContent = response.data.productCode;
-    if (response.image && response.image.length != 0) {
-      ProductImage.src = `data:image/png;base64,${response.image}`;
+    if (response.data.image && response.data.image.length != 0) {
+      ProductImage.src = `data:image/png;base64,${response.data.image}`;
       document.getElementById("ProductImageE").src = `data:image/png;base64,${response.image}`;
     } else {
       ProductImage.src = response.data.productInfo.image_url;
@@ -136,64 +146,71 @@ window.addEventListener("load", function () {
       setInfo(response);
     },
   });
-});
-//edit
-function checUpdate(d) {
-  if (d.productInfo.name != currentP.data.productInfo.name) return true;
-  if (d.productCode != currentP.data.productCode) return true;
-  if (d.productInfo.rec != currentP.data.productInfo.rec) return true;
-  if (d.productInfo.packagingType != currentP.data.productInfo.packagingType) return true;
-  if (d.productInfo.binType != currentP.data.productInfo.binType) return true;
-  return false;
-}
-function a() {
-  var productImageEA = document.getElementById("productImageEA");
-  var productImageE = document.getElementById("ProductImageE");
-  var productInfoCodeE = document.getElementById("productInfoCodeE");
-  var packagingTypeE = document.getElementById("packagingTypeE");
-  var recyclingE = document.getElementById("recyclingE");
-  var Rec = document.getElementById("Rec");
-  var ProductnameE = document.getElementById("ProductnameE");
-  var f = null;
-  productImageEA.addEventListener("change", function (e) {
-    const [file] = this.files;
-    console.log(file);
-    if (file) {
-      productImageE.src = URL.createObjectURL(file);
-      var reader = new FileReader();
-      reader.addEventListener("load", function (e) {
-        f = this.result;
-      });
-      reader.readAsBinaryString(file);
-    }
-  });
-  $("#saveChanges").click(function (e) {
-    if (productInfoCodeE.value.trim().length != 0) {
-      var r = {
-        productCode: productInfoCodeE.value,
-        productInfo: { name: ProductnameE.value.trim(), rec: recyclingE.value.trim(), packagingType: packagingTypeE.value.trim(), binType: Rec.value },
-      };
-      if (!currentP.data.productInfo.image_url == productImageE.src) {
-        r.image = `${btoa(f)}`;
-        r.imageUpdate = true;
-      } else {
-        r.productInfo.image_url = currentP.data.productInfo.image_url;
+  //edit
+  function checUpdate(d) {
+    if (d.productInfo.name != currentP.data.productInfo.name) return true;
+    if (d.productCode != currentP.data.productCode) return true;
+    if (d.productInfo.rec != currentP.data.productInfo.rec) return true;
+    if (d.productInfo.packagingType != currentP.data.productInfo.packagingType) return true;
+    if (d.productInfo.binType != currentP.data.productInfo.binType) return true;
+    return false;
+  }
+  function a() {
+    var productImageEA = document.getElementById("productImageEA");
+    var productImageE = document.getElementById("ProductImageE");
+    var productInfoCodeE = document.getElementById("productInfoCodeE");
+    var packagingTypeE = document.getElementById("packagingTypeE");
+    var recyclingE = document.getElementById("recyclingE");
+    var Rec = document.getElementById("Rec");
+    var ProductnameE = document.getElementById("ProductnameE");
+    var f = null;
+    productImageEA.addEventListener("change", function (e) {
+      const [file] = this.files;
+      console.log(file);
+      if (file) {
+        productImageE.src = URL.createObjectURL(file);
+        var reader = new FileReader();
+        reader.addEventListener("load", function (e) {
+          f = this.result;
+        });
+        reader.readAsBinaryString(file);
       }
-      if (checUpdate(r)) r.update = true;
-      $.ajax({
-        type: "post",
-        url: "/apiv2.1.3.7/inserter.php",
-        data: JSON.stringify(r),
-        dataType: "json",
-        success: function (response) {
-          console.log(response);
-        },
-      });
-    }
+    });
+    $("#saveChanges").click(function (e) {
+      if (productInfoCodeE.value.trim().length != 0) {
+        var r = {
+          productCode: productInfoCodeE.value,
+          productInfo: { name: ProductnameE.value.trim(), rec: recyclingE.value.trim(), packagingType: packagingTypeE.value.trim(), binType: Rec.value },
+        };
+        if (!currentP.data.productInfo.image_url || !currentP.data.productInfo.image_url == productImageE.src) {
+          r.image = `${btoa(f)}`;
+          //r.imageUpdate = true;
+        } else {
+          r.productInfo.image_url = currentP.data.productInfo.image_url;
+        }
+        //if (checUpdate(r)) r.update = true;
+        //else
+        $.ajax({
+          type: "post",
+          url: "/apiv2.1.3.7/inserter.php",
+          data: JSON.stringify(r),
+          dataType: "json",
+          success: function (response) {
+            console.log(response);
+            alert("Zapisano Pomyślnie");
+          },
+        });
+      }
+    });
+  }
+  a();
+  $("#editProduct").click(function (e) {
+    $("#productInfo").hide();
+    $("#productInfoEdit").show();
   });
-}
-a();
-$("#editProduct").click(function (e) {
-  $("#productInfo").hide();
-  $("#productInfoEdit").show();
+  $("#cancelChanges").click(() => {
+    resetEdit();
+    $("#productInfo").show();
+    $("#productInfoEdit").hide();
+  });
 });
