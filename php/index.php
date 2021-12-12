@@ -49,7 +49,7 @@ require_once("header.php");
     <h2 class="text-gray-300 font-semibold text-lg">Sposób recyklingu:</h2>
     <textarea id="recyclingE" class="w-full bg-gray-500 text-white h-7 focus:outline-none text-md rounded-md mb-2 pl-2"></textarea>
     <label class="flex w-full gap-4 items-center">
-        <p class="font-bold">Rodzaj kosza</p>
+        <p class="font-bold">Rodzaj kosza:</p>
         <select id="Rec" class="bg-gray-500 font-bold p-1 w-28 rounded-md">
             <option value="mieszane" class="bg-blue-400 sm:w-15 px-1 py-0.5">mieszane</option>
             <option value="papier" class="bg-blue-800 px-1 py-0.5">papier</option>
@@ -71,7 +71,7 @@ require_once("header.php");
     <!-- ZDJECIE -->
     <!-- NAZWA -->
     <h1 class="text-xl font-semibold mb-3 w-full text-center" id="Productname"></h1>
-    <img id="ProductImage" class="w-1/2 mr-2 h-1/2 rounded-tr-xl rounded-bl-2xl text-center" src="" alt="Obraz sięnie załadował">
+    <img id="ProductImage" class="w-1/2 mr-2 h-1/2 rounded-tr-xl rounded-bl-2xl text-center" src="" alt="Obraz się nie załadował">
     <!-- kod produktu(takie male) -->
     <label class="w-1/3">
         <p class="inline text-xs text-gray-400 ">kod: </p>
