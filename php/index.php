@@ -29,17 +29,19 @@ require_once("header.php");
 
 </div>
 <!-- informacje o produkcie -->
-<div id="productInfoEdit" class="relative my-3 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit" hidden>
+<div id="productInfoEdit" class="relative my-3 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
     <h1 class="text-xl font-semibold -mb-3"></h1><img class="absolute h-32 w-32 right-0 top-0 rounded-tr-2xl rounded-bl-2xl" src="" alt="">
     <!-- kod produktu(takie male) -->
     <p class="inline text-xs text-gray-400 ">kod: </p>
-    <p class="inline text-xs text-gray-400">6942069</p>
+    <input type="text" class="inline text-xs text-gray-400">
     <!-- MATERIAL OPAKOWANIA -->
     <h2>Materiał opakowania: </h2>
-    <h2></h2>
+    <input type="text" id="packagingTypeE">
     <!-- SPOSOB RECYKLINGU -->
     <h2>Sposób recyklingu:</h2>
-    <<select id="packagingTypeE">
+    <input type="text" id="recyclingE">
+    <h2>rodzaj kosza</h2>
+    <select id="TrashTypeE">
         <option value="mieszane">mieszane</option>
         <option value="papier">papier</option>
         <option value="szklo">szkło</option>
@@ -47,7 +49,8 @@ require_once("header.php");
         <option value="bio">jedzenie</option>
         <option value="baterie">baterie</option>
         <option value="leki">leki</option>
-        </select>
+    </select>
+    <button id="saveChanges">Save</button>
 </div>
 <div id="productInfo" class="relative my-3 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
     <!-- ZDJECIE -->
@@ -62,7 +65,8 @@ require_once("header.php");
     <!-- SPOSOB RECYKLINGU -->
     <h2>Sposób recyklingu:</h2>
     <h2 id="recycling"></h2>
-
+    <h2>najbliszy kosz</h2>
+    <input type="button" id="clossetBin" value="znajdz">
 </div>
 
 <!-- Historia -->

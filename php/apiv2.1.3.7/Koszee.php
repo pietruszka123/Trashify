@@ -4,9 +4,12 @@ if ($mysqli === false) {
     die("ERROR: Could not connect. " . $mysqli->connect_error);
 }
 
-$sql = "SELECT * FROM trashcans WHERE 1;";
+$sql = "SELECT * FROM trashcans";
 
 $data = json_decode(file_get_contents('php://input'), true);
+if (isset($data["type"])) {
+    $sql .= " WHERE trashCanType = '" . $data["type"] . "'";
+}
 $r = ["status" => false];
 $result = $mysqli->query($sql);
 if ($result !== false && $result->num_rows != 0) {

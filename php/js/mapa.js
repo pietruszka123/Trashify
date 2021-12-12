@@ -1,3 +1,47 @@
+function parseURLParams(url) {
+  var queryStart = url.indexOf("?") + 1,
+    queryEnd = url.indexOf("#") + 1 || url.length + 1,
+    query = url.slice(queryStart, queryEnd - 1),
+    pairs = query.replace(/\+/g, " ").split("&"),
+    parms = {},
+    i,
+    n,
+    v,
+    nv;
+
+  if (query === url || query === "") return;
+
+  for (i = 0; i < pairs.length; i++) {
+    nv = pairs[i].split("=", 2);
+    n = decodeURIComponent(nv[0]);
+    v = decodeURIComponent(nv[1]);
+
+    if (!parms.hasOwnProperty(n)) parms[n] = [];
+    parms[n].push(nv.length === 2 ? v : null);
+  }
+  return parms;
+}
+function GetBins(type, location) {
+  $.ajax({
+    type: "post",
+    url: "/apiv2.1.3.7/Koszee.php",
+    data: JSON.stringify({ type: type, location: location }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (response) {
+      console.log(response);
+      response.data.forEach((element) => {
+        var a = new ol.Feature({
+          geometry: new ol.geom.Point(ol.proj.fromLonLat([element.location.longitude, element.location.latitude])),
+        });
+        setStyleE(a, element.type);
+
+        source.addFeature(a);
+      });
+    },
+  });
+}
+
 function setStyleE(a, t) {
   switch (t) {
     case "mieszane":
@@ -156,24 +200,6 @@ function setStyle(element, color) {
   );
 }
 var cords = { lon: 21.168062, lan: 49.677148 };
-$.ajax({
-  type: "post",
-  url: "/apiv2.1.3.7/Koszee.php",
-  data: JSON.stringify({ a: false }),
-  contentType: "application/json; charset=utf-8",
-  dataType: "json",
-  success: function (response) {
-    console.log(response);
-    response.data.forEach((element) => {
-      var a = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([element.location.longitude, element.location.latitude])),
-      });
-      setStyleE(a, element.type);
-
-      source.addFeature(a);
-    });
-  },
-});
 //widok
 const view = new ol.View({
   center: ol.proj.fromLonLat([cords.lon, cords.lan]),
@@ -287,3 +313,25 @@ $("#save").click(function (e) {
     point = false;
   }
 });
+var args = parseURLParams(window.location.href);
+if (args.data) {
+  console.log(JSON.parse(atob(args.data)));
+  GetBins(JSON.parse(atob(args.data)));
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (cor) => {
+        cords.lon = cor.coords.longitude;
+        cords.lan = cor.coords.latitude;
+
+        view.animate({
+          center: ol.proj.fromLonLat([cords.lon, cords.lan]),
+          duration: 500,
+          zoom: 17,
+        });
+      },
+      (err) => {}
+    );
+  }
+} else {
+  GetBins();
+}

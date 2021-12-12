@@ -41,6 +41,19 @@ window.addEventListener("load", function () {
     productInfoCode.textContent = response.data.productCode;
 
     ProductImage.src = response.data.productInfo.image_url;
+    var binB = document.getElementById("clossetBin");
+    if (!response.data.productInfo.binType || response.data.productInfo.binType.length == 0) {
+      binB.disabled = true;
+
+      binB.binType = response.data.productInfo.binType;
+      binB.addEventListener("click", function (e) {
+        console.log(this.binType);
+        var base = btoa(JSON.stringify({ type: this.binType }));
+        window.location = `/mapa.php?data=${base}`;
+      });
+    } else {
+      binB.disabled = false;
+    }
   }
   /**
    *
