@@ -131,7 +131,7 @@ $_SESSION['rememberMe'] = NULL; */
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" font-bold  w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'mapa.php' == $URI) {
                                                                                                                                                         echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                     } ?>">Mapa Koszy</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="blog.php" class=" font-bold w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'blog.php' == $URI) {
+                <li class="flex justify-center rounded-3xl"><a href="kalendarz.php" class=" font-bold w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'blog.php' == $URI) {
                                                                                                                                                         echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                     } ?>">Kalendarz</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" font-bold  w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'informacje.php' == $URI) {
