@@ -106,7 +106,7 @@ function setStyleE(a, t) {
           }),
         })
       );
-    //break;
+      break;
     default:
       //console.log(t);
       setStyle(a, "#ff0000");

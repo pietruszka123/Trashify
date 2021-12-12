@@ -1,4 +1,5 @@
 window.addEventListener("load", function () {
+  var EditMode = false;
   let selectedDeviceId;
   const codeReader = new ZXing.BrowserBarcodeReader();
   codeReader.getVideoInputDevices().then((videoInputDevices) => {
@@ -26,11 +27,26 @@ window.addEventListener("load", function () {
     var packagingType = document.getElementById("packagingType");
     var ProductImage = document.getElementById("ProductImage");
     var Productname = document.getElementById("Productname");
+    $("#productInfoCodeE").val(response.data.productCode);
+
+    console.log(response.data.productCode);
+    console.log(response);
+    if (response.status == false) {
+      console.log("?");
+      EditMode = true;
+      $("#productInfo").hide();
+      $("#productInfoEdit").show();
+      return;
+    }
+    EditMode = false;
+    $("#productInfo").show();
+    $("#productInfoEdit").hide();
     Productname.textContent = response.data.productInfo.name;
     if (!response.data.packagingType || response.data.packagingType.trim().length == 0) {
       packagingType.textContent = "brak informacji";
     } else {
       packagingType.textContent = response.data.productInfo.packagingType;
+      $("#packagingTypeE").text(response.data.productInfo.packagingType);
     }
     if (!response.data.rec || response.data.rec.trim().length == 0) {
       recycling.textContent = "brak informacji";
@@ -108,3 +124,44 @@ window.addEventListener("load", function () {
     },
   });
 });
+//edit
+function a() {
+  var productImageEA = document.getElementById("productImageEA");
+  var productImageE = document.getElementById("productImageE");
+  var productInfoCodeE = document.getElementById("productInfoCodeE");
+  var packagingTypeE = document.getElementById("packagingTypeE");
+  var recyclingE = document.getElementById("recyclingE");
+  var Rec = document.getElementById("Rec");
+  var ProductnameE = document.getElementById("ProductnameE");
+  var f;
+  productImageEA.addEventListener("change", function (e) {
+    const [file] = this.files;
+    console.log(file);
+    if (file) {
+      productImageE.src = URL.createObjectURL(file);
+      var reader = new FileReader();
+      reader.addEventListener("load", function (e) {
+        f = this.result;
+      });
+      reader.readAsBinaryString(file);
+    }
+  });
+  $("#saveChanges").click(function (e) {
+    //if (productInfoCodeE.value.trim().match("/[0-9]+/")) {
+    $.ajax({
+      type: "post",
+      url: "/apiv2.1.3.7/inserter.php",
+      data: JSON.stringify({
+        image: `${btoa(f)}`,
+        productCode: productInfoCodeE.value,
+        productInfo: { name: ProductnameE.value.trim(), rec: recyclingE.value.trim(), packagingType: packagingTypeE.value.trim(), binType: Rec.value },
+      }),
+      dataType: "json",
+      success: function (response) {
+        console.log(response);
+      },
+    });
+    //}
+  });
+}
+a();

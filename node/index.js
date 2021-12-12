@@ -26,7 +26,7 @@ app.post("/getProduct.json", (req, res, next) => {
             res.writeHead(200, head);
             var r = {
               status: ret.status,
-              data: { ProductCode: ret.code, productInfo: { name: ret.product.abbreviated_product_name, image_url: ret.product.image_url, rec: "", packagingType: "", binType: "" } },
+              data: { productCode: ret.code, productInfo: { name: ret.product.abbreviated_product_name, image_url: ret.product.image_url, rec: "", packagingType: "", binType: "" } },
             };
             Insert(r.data);
 
@@ -37,7 +37,7 @@ app.post("/getProduct.json", (req, res, next) => {
             res.end(
               JSON.stringify({
                 status: ret.status,
-                data: { ProductCode: ret.code, productInfo: { name: ret.product.abbreviated_product_name, image_url: ret.product.image_url, rec: "", packagingType: "", binType: "" } },
+                data: { productCode: ret.code, productInfo: {} },
               })
             );
           }

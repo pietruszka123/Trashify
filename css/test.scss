@@ -4,152 +4,160 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 nav {
-    background: #000;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav .mainMenu {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 nav .mainMenu li a {
-    display: inline-block;
-    padding: 7px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 1rem;
-    align-self: end;
-    border-radius: 15px;
-    font-weight: 500;
-    text-align: center;
-    align-items: center;
+  display: inline-block;
+  padding: 7px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1rem;
+  align-self: end;
+  border-radius: 15px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
 }
 
 nav .openMenu {
-    font-size: 2rem;
-    margin: 20px;
-    display: none;
-    cursor: pointer;
+  font-size: 2rem;
+  margin: 20px;
+  display: none;
+  cursor: pointer;
 }
 
 nav .mainMenu .closeMenu,
 .icons i {
-    font-size: 2rem;
-    display: none;
-    cursor: pointer;
+  font-size: 2rem;
+  display: none;
+  cursor: pointer;
 }
 
 .navik {
+  display: flex;
+  flex-direction: row;
+}
+
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (max-width: 1020px) {
+  nav .mainMenu {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 8rem;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+    transition: top 1s ease;
+    display: none;
+    background: #3730a3;
+    border: 4px white solid;
+    flex-direction: column;
+    margin-right: 0.75rem;
+    gap: 0px;
+  }
+  nav .mainMenu .closeMenu {
+    display: block;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: -5px;
+  }
+  nav .openMenu {
+    display: block;
+  }
+  nav .mainMenu li a {
+    border-radius: 1.5rem;
+    border: 1px white solid;
+    background-color: rgb(249, 168, 212);
+    margin-bottom: 0.5rem;
+  }
+  nav .mainMenu li a:hover {
+    background: #7ab4c0;
+    font-size: 1rem;
+  }
+  nav .mainMenu ul {
+    background-color: transparent;
+  }
+  .navik {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
 }
-
-@media(max-width: 800px) {
-    nav .mainMenu {
-        height: fit-content;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 8rem;
-        z-index: 10;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 0;
-        transition: top 1s ease;
-        display: none;
-        background: #3730A3;
-        border: 4px white solid;
-        flex-direction: column;
-        margin-right: 0.75rem;
-        gap: 0px;
-    }
-    nav .mainMenu .closeMenu {
-        display: block;
-        margin-left: auto;
-        margin-right: 5px;
-        margin-top: -5px;
-    }
-    nav .openMenu {
-        display: block;
-    }
-    nav .mainMenu li a {
-        border-radius: 1.5rem;
-        border: 1px white solid;
-        background-color: rgb(249, 168, 212);
-        margin-bottom: 0.5rem;
-    }
-    nav .mainMenu li a:hover {
-        background: #7AB4C0;
-        font-size: 1rem;
-    }
-    nav .mainMenu ul {
-        background-color: transparent;
-    }
-    .navik {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 
 /* Video Switch */
 
 .toggle {
-    --width: 50px;
-    --height: calc(var(--width) / 2);
-    --border-radius: calc(var(--height) / 2);
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    margin-bottom: 8px;
-    align-items: center;
+  --width: 64px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  margin-bottom: 8px;
+  align-items: center;
 }
 
 .toggle__input {
-    display: none;
+  display: none;
 }
-
 
 /* background switcha*/
 
 .toggle__fill {
-    position: relative;
-    width: var(--width);
-    height: var(--height);
-    border-radius: var(--border-radius);
-    background-color: rgba(156, 163, 175, 100%);
-    /* border:1px white solid; */
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background-color: rgba(156, 163, 175, 100%);
+  /* border:1px white solid; */
 }
-
 
 /* background switcha po kliknięciiu*/
 
-.toggle__input:checked~.toggle__fill {
-    background-color: rgba(156, 163, 175, 100%);
-    transition: background 2s;
+.toggle__input:checked ~ .toggle__fill {
+  background-color: rgba(156, 163, 175, 100%);
+  transition: background 2s;
 }
-
 
 /* kółko switcha */
 
 .toggle__fill::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: var(--height);
-    width: var(--height);
-    background: #3B82F6;
-    border-radius: var(--border-radius);
-    transition: transform 1s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--height);
+  width: var(--height);
+  background: #3b82f6;
+  border-radius: var(--border-radius);
+  transition: transform 1s;
 }
 
-.toggle__input:checked~.toggle__fill::after {
-    transform: translateX(var(--height));
-    background: rgba(244, 114, 182, 100%);
-    transition: background transform 1s;
+.toggle__input:checked ~ .toggle__fill::after {
+  transform: translateX(var(--height));
+  background: rgba(236, 72, 153, 100%);
+  transition: background transform 1s;
 }
