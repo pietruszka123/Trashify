@@ -17,7 +17,9 @@ require_once("header.php");
             <div class="toggle__fill"></div>
         </label>
         <!-- wybór kamerki -->
-        <select class="w-1/2 bg-gray-500 h-8 py-4 focus:outline-none text-white rounded-xl" id="sourceSelect"></select>
+        <select class="w-1/2 bg-gray-500 h-8 py-4 focus:outline-none text-white rounded-xl"id="sourceSelect">
+            
+        </select>
     </div>
     <!-- ręczny skan -->
     <label class="flex flex-row mb-2 justify-center items-center flex-wrap">
@@ -29,7 +31,7 @@ require_once("header.php");
 
 </div>
 <!-- informacje o produkcie -->
-<div id="productInfoEdit" class="relative my-3 flex flex-wrap gap-0 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
+<div id="productInfoEdit" class="relative my-3 flex flex-wrap justify-center gap-0 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
     <img class=" h-60 w-60 rounded-tr-2xl rounded-bl-2xl" src="" alt="">
     <!-- kod produktu(takie male) -->
     <label class="mt-2 w-full my-auto">
