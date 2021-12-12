@@ -11,6 +11,7 @@ if ($data["productCode"] == "random") {
     Get();
 }
 $mysqli->close();
+
 function GetRANDOM()
 {
     global $mysqli;
@@ -43,10 +44,11 @@ function Get()
             if (isset($row)) {
                 $r["status"] = true;
                 $r["data"] =  $row;
+                unset($r["data"]["productImage"]);
                 $r["data"]["productInfo"] = json_decode($row["productInfo"]);
+                $r["data"]["image"] = base64_encode($row["productImage"]);
             }
         }
     }
-
     echo json_encode($r);
 }
