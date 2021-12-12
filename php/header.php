@@ -104,7 +104,7 @@ $_SESSION['rememberMe'] = NULL; */
         <h1 class="text-2xl py-0.5 float-left">Trash dooter</h1>
 
         <!-- nav bar -->
-        <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 -mr-5 ">
+        <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 -mr-12 ">
             <div class="openMenu"><i class="fa fa-bars dark:text-white "></i></div>
             <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-g1 flex flex-wrap gap-2 px-2">
                 <!-- darkmode switch -->
@@ -139,7 +139,7 @@ $_SESSION['rememberMe'] = NULL; */
                                                                                                                                                         } ?>">Artykuły</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'tworcy.php' == $URI) {
                                                                                                                                                         echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
-                                                                                                                                                    } ?>">Twórcy</a></li>
+                                                                                                                                                    } ?>">Autorzy</a></li>
                 <?php
                 if ($beg . 'login.php' != $URI) {
                     echo '<li class="flex justify-center rounded-3xl"><a href="" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400">Wyloguj</a></li>';
@@ -152,7 +152,7 @@ $_SESSION['rememberMe'] = NULL; */
             </ul>
         </nav>
         <!-- paprotka -->
-        <svg class="h-16 w-16 mr-3" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <svg class="h-16 w-16" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g transform="matrix(0.437044,-1.49586,1.49586,0.437044,-93.123,1641.41)">
                 <g transform="matrix(4.16667,0,0,4.16667,-606.319,-813.773)">
                     <path d="M263.6,266C266.4,264.7 268.4,262 268.6,258.7C268.9,253.9 265.2,251.2 260.5,250.9C257.1,250.7 252.9,253.5 250.2,255.2C240.6,261.4 233.1,263 227.9,264.1C226,264.5 224.1,264.9 222.1,264.9C222.2,265 248,274.4 263.6,266Z" style="fill:#f472b6;fill-rule:nonzero;" />
