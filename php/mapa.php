@@ -26,7 +26,7 @@ require_once("header.php");
     <?php
     if (isset($_GET["data"])) {
     ?>
-        <input type="button" id="showAllBins" value="Pokaż wszystkie kosze">
+        <input type="button" id="showAllBins" class="font-bold bg-gray-500 p-1 rounded-md ml-2 px-3" value="Pokaż wszystkie kosze">
     <?php
     }
     ?>
@@ -44,7 +44,7 @@ require_once("header.php");
                 <option value="plastik" class="bg-yellow-300 text-black">metale i plastik</option>
                 <option value="bio" class="bg-green-800">Biodegradowalne</option>
                 <option value="baterie">baterie</option>
-                <option value="leki " class="bg-red-700 focus:outline-none">
+                <option value="leki" class="bg-red-700 focus:outline-none">
                     <p class="text-bold">Lerstwa +</p>
                 </option>
             </select>

@@ -17,8 +17,8 @@ require_once("header.php");
             <div class="toggle__fill"></div>
         </label>
         <!-- wybór kamerki -->
-        <select class="w-1/2 bg-gray-500 h-8 py-4 focus:outline-none text-white rounded-xl"id="sourceSelect">
-            
+        <select class="w-1/2 bg-gray-500 h-8 py-4 focus:outline-none text-white rounded-xl" id="sourceSelect">
+
         </select>
     </div>
     <!-- ręczny skan -->
@@ -33,17 +33,18 @@ require_once("header.php");
 <!-- informacje o produkcie -->
 <div id="productInfoEdit" class="relative my-3 flex flex-wrap justify-center gap-0 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit">
     <img class=" h-60 w-60 rounded-tr-2xl rounded-bl-2xl" src="" alt="">
+    <input type="file" id="productImageE" accept="image/png, image/gif, image/jpeg" />
     <!-- kod produktu(takie male) -->
     <label class="mt-2 w-full my-auto">
         <p class="inline text-s text-gray-300  font-semibold w-1/5 mt-2">kod: </p>
-        <input type="text" class="inline text-s bg-gray-500 mx-2 text-white h-4 focus:outline-none pl-1  rounded-md">
+        <p type="text" id="productInfoCodeE" class="inline text-s bg-gray-500 mx-2 text-white h-4 focus:outline-none pl-1  rounded-md"></p>
     </label>
     <!-- MATERIAL OPAKOWANIA -->
     <h2 class="text-gray-300 font-semibold text-lg">Materiał opakowania: </h2>
     <input type="text" id="packagingTypeE" class="w-full bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md pl-2">
     <!-- SPOSOB RECYKLINGU -->
     <h2 class="text-gray-300 font-semibold text-lg">Sposób recyklingu:</h2>
-    <input type="text" id="recyclingE" class="w-full bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md mb-2 pl-2">
+    <textarea id="recyclingE" class="w-full bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md mb-2 pl-2"></textarea>
     <label class="flex w-full gap-4 items-center">
         <p class="font-bold">Rodzaj kosza</p>
         <select id="type" class="bg-gray-500 font-bold p-1 w-28 rounded-md">
@@ -64,7 +65,7 @@ require_once("header.php");
     <h1 class="text-xl font-semibold -mb-3" id="Productname"></h1><img id="ProductImage" class="absolute h-32 w-32 right-0 top-0 rounded-tr-2xl rounded-bl-2xl" src="" alt="">
     <!-- kod produktu(takie male) -->
     <p class="inline text-xs text-gray-400 ">kod: </p>
-    <p class="inline text-xs text-gray-400" id="productInfoCode">6942069</p>
+    <p class="inline text-xs text-gray-400" id="productInfoCode"></p>
     <!-- MATERIAL OPAKOWANIA -->
     <h2>Materiał opakowania: </h2>
     <h2 id="packagingType"></h2>

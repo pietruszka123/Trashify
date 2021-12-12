@@ -1,3 +1,11 @@
+function addBin(pos, type) {
+  var a = new ol.Feature({
+    geometry: new ol.geom.Point(ol.proj.fromLonLat([pos[0], pos[1]])),
+  });
+  a.Bin = true;
+  setStyleE(a, type);
+  source.addFeature(a);
+}
 function parseURLParams(url) {
   var queryStart = url.indexOf("?") + 1,
     queryEnd = url.indexOf("#") + 1 || url.length + 1,
@@ -43,8 +51,9 @@ function GetBins(type, location) {
             e = element;
           }
         }
-        setStyleE(a, element.type);
-        source.addFeature(a);
+        //setStyleE(a, element.type);
+        //source.addFeature(a);
+        addBin([element.location.longitude, element.location.latitude], element.type);
       });
       if (type && location) {
         view.animate({
@@ -78,28 +87,28 @@ function setStyleE(a, t) {
         new ol.style.Style({
           image: new ol.style.Icon({
             color: "#ffffff",
-            alpha: 0,
             crossOrigin: "anonymous",
             imgSize: [20, 20],
-            src: "img/test.png",
+            src: "img/baterie.svg",
           }),
         })
       );
       break;
     case "leki":
+      console.log("leki");
       a.setStyle(
         new ol.style.Style({
           image: new ol.style.Icon({
             color: "#ffffff",
-            alpha: 0,
             crossOrigin: "anonymous",
             imgSize: [20, 20],
-            src: "img/test.png",
+            src: "img/leki.svg",
           }),
         })
       );
-      break;
+    //break;
     default:
+      //console.log(t);
       setStyle(a, "#ff0000");
       break;
   }
@@ -158,9 +167,12 @@ class geo {
   start() {
     source.addFeature(this.positionFeature);
     source.addFeature(this.accuracyFeature);
+  }
+  goTo() {
     view.animate({
       center: this.geo.getPosition(),
       duration: 500,
+      zoom: 17,
     });
   }
   stop() {
@@ -184,17 +196,14 @@ class Location extends ol.control.Control {
       target: options.target,
     });
     this.geo = new geo();
-    this.state = false;
+    //this.state = false;
     button.addEventListener("click", this.handleRotateNorth.bind(this), false);
+    this.geo.start();
   }
 
   handleRotateNorth() {
-    if (this.state) {
-      this.geo.stop();
-    } else {
-      this.geo.start();
-    }
-    this.state = !this.state;
+    this.geo.goTo();
+    //this.state = !this.state;
     //this.getMap().getView().setRotation(0);
   }
 }
@@ -243,6 +252,14 @@ var map = new ol.Map({
 });
 map.once("postrender", function (event) {
   $("#Loading").remove();
+  map.getViewport().addEventListener("click", function (e) {
+    map.forEachFeatureAtPixel(map.getEventPixel(e), function (feature, layer) {
+      if (layer == vector) {
+        console.log(feature.Bin);
+        console.log("tak");
+      }
+    });
+  });
 });
 
 var draw = new ol.interaction.Draw({
@@ -324,11 +341,7 @@ $("#save").click(function (e) {
     var features = currentSource.getFeatures();
     var lastFeature = features[features.length - 1];
     currentSource.removeFeature(lastFeature);
-    var a = new ol.Feature({
-      geometry: new ol.geom.Point(ol.proj.fromLonLat([currentKosz.pos[0], currentKosz.pos[1]])),
-    });
-    setStyleE(a, currentKosz.type);
-    source.addFeature(a);
+    addBin(currentKosz.pos, currentKosz.type);
     point = false;
   }
 });
