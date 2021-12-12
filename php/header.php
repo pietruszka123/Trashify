@@ -136,7 +136,7 @@ $_SESSION['rememberMe'] = NULL; */
                                                                                                                                                     } ?>">Blog</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'informacje.php' == $URI) {
                                                                                                                                                             echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
-                                                                                                                                                        } ?>">Info</a></li>
+                                                                                                                                                        } ?>">Artykuły</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class=" text-weight-bold w-full text-center dark:hover:bg-pink-400 <?php if ($beg . 'tworcy.php' == $URI) {
                                                                                                                                                         echo 'dark:text-pink-400 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                     } ?>">Twórcy</a></li>
