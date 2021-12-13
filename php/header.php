@@ -104,7 +104,7 @@ $_SESSION['rememberMe'] = NULL; */
         <h1 class="text-2xl py-0.5 float-left text-green-400 dark:text-blue-400 font-bold">Trash dooter</h1>
 
         <!-- nav bar -->
-        <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 -mr-12 ">
+        <nav class="block relative w-max bg-transparent z-40 ml-auto mt-2 -mr-12 ">
             <div class="openMenu"><i class="fa fa-bars dark:text-white text-green-400"></i></div>
             <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-indigo-700 flex flex-wrap gap-2 px-2 py-2">
                 <!-- darkmode switch -->
