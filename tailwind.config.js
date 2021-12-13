@@ -23,6 +23,7 @@ module.exports = {
       g4: "#FF7B5B",
       g5: "#FFBB50",
       g6: "#F9F871",
+      g7: "#E5C3D1",
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
@@ -235,9 +236,13 @@ module.exports = {
       "2xl": "0 25px 25px rgba(0, 0, 0, 0.15)",
       none: "0 0 #0000",
     },
-    fill: { current: "currentColor" },
+    fill: { 
+      blue: "RGB(59 130 246);",
+      green: "RGB(52, 211, 153)",
+  },
     grayscale: {
       0: "0",
+      green:"#65E7B7",
       DEFAULT: "100%",
     },
     hueRotate: {
@@ -902,7 +907,7 @@ module.exports = {
     divideStyle: ["responsive"],
     divideWidth: ["responsive"],
     dropShadow: ["responsive"],
-    fill: ["responsive"],
+    fill: ["responsive", "dark"],
     filter: ["responsive"],
     flex: ["responsive"],
     flexDirection: ["responsive"],
