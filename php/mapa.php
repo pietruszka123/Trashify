@@ -56,9 +56,9 @@ require_once("header.php");
     <?php
     }
     ?>
-    <label for="add" class="flex text-center mb-1 flex-col gap-4">
+    <label for="add" class="flex text-center flex-col gap-2">
         <p class="select-none hover:cursor-pointer cursor-default font-bold ml-2 bg-gray-500 px-4 rounded-md h-fit w-36">Dodaj kosz +</p>
-        <div class=" w-fit mx-auto flex justify-center bg-gray-600 text-left p-1 rounded-md">
+        <div class=" w-fit mx-auto flex justify-center bg-gray-700 text-left p-1 rounded-md">
             <input type="checkbox" id="add" class="hover:cursor-pointer cursor-default h-6 w-6 font-bold bg-gray-500" hidden>
 
 
@@ -88,7 +88,7 @@ require_once("header.php");
         </div>
     </label>
 </div>
-<script src="./js/testy.js"></script>
+<!-- <script src="./js/testy.js"></script> -->
 <script src="./js/mapa.js"></script>
 <!-- stopka -->
 </div>

@@ -57,7 +57,7 @@ $_SESSION['rememberMe'] = NULL; */
     <script src="./js/barcodeScanner.js"></script>
 </head>
 
-<body class="p-0 m-0 min-h-screen h-fit overflow-x-hidden dark:bg-gray-800 bg-gray-300 ">
+<body class="p-0 m-0 min-h-screen h-fit overflow-x-hidden dark:bg-gray-800 bg-gray-300 " >
     <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 bg-indigo-800 h-16 w-screen items-center overflow-hidden flex gap-2">
         <!-- paprotka -->
         <svg class="h-16 w-16 ml-1" style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
@@ -131,9 +131,6 @@ $_SESSION['rememberMe'] = NULL; */
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class=" font-bold  w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'mapa.php' == $URI) {
                                                                                                                                                         echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                     } ?>">Mapa Koszy</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="kalendarz.php" class=" font-bold w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'blog.php' == $URI) {
-                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
-                                                                                                                                                    } ?>">Kalendarz</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="informacje.php" class=" font-bold  w-full text-center dark:hover:bg-pink-500 <?php if ($beg . 'informacje.php' == $URI) {
                                                                                                                                                             echo 'dark:text-pink-500 dark:hover:bg-blue-500  bg-blue-500 dark:bg-white border-2 dark:hover:text-white border-pink-400';
                                                                                                                                                         } ?>">Artykuły</a></li>
@@ -190,4 +187,5 @@ $_SESSION['rememberMe'] = NULL; */
     </header>
     <!-- gradientowa linia -->
     <div class="w-screen h-1 top-0 to-pink-400 bg-gradient-to-r from-blue-500"></div>
-    <div class="justify-evenly min-h-screen h-full w-screen p-5 dark:bg-gray-800 text-pink-300 bg-gray-300 dark:text-gray-200 flex flex-wrap">
+    <!-- container -->
+    <div class="justify-evenly min-h-screen h-full w-screen p-5 dark:bg-gray-800 text-pink-300 bg-gray-300 dark:text-gray-200 flex flex-wrap ">
