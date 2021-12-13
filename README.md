@@ -1,14 +1,3 @@
-# Recycle
+# Trashify
 
-## funkcje
-
-### mapa Koszy
-- mapa
-### skaner
-- skaner
-- historia zeskanowanych produktów
-### blogi
-- blogi
-
-##  Budowa Serwera
-<img src="Budowa Projektu.gv.svg">
+[link do strony, zalecane używanie na telefonie](https://trashify.hlandia.pl/)
