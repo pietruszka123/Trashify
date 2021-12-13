@@ -23,7 +23,7 @@ require_once("header.php");
     <h2 class="w-full text-lg font-bold text-center dark:text-blue-500 text-white">(Lokalizacje śmietników)</h2>
     <!-- przycisk info -->
     <button data-modal-target="#modal"><i class="fas fa-info-circle text-3xl text-white absolute top-2 right-2"></i></button>
-    <div class="modal bg-green-500 overflow-y-scroll" id="modal">
+    <div class="modal bg-green-500 dark:bg-gray-700 overflow-y-scroll" id="modal">
         <div class="modal-header">
             <div class="text-xl text-white font-bold py-0">Jak używać mapy?</div>
             <button data-close-button class="close-button text-white">&times;</button>
@@ -66,13 +66,13 @@ require_once("header.php");
             <div id="AddBinCont" class="flex flex-wrap w-fit" style="display: none;">
                 <label class="flex w-full gap-2 items-center">
                     <p class="font-bold w-full text-white">Rodzaj kosza:</p>
-                    <select id="type" class="focus:outline-none bg-white font-bold p-1 rounded-md w-28 m-2 text-green-500">
+                    <select id="type" class="focus:outline-none font-bold p-1 rounded-md w-28 m-2 ">
                         <option value="mieszane" class="bg-black focus:outline-none text-white">mieszane</option>
                         <option value="papier" class="bg-blue-800 focus:outline-none">papier</option>
                         <option value="szklo" class="bg-blue-400 focus:outline-none">szkło</option>
                         <option value="plastik" class="bg-yellow-300 focus:outline-none text-black">metale i plastik</option>
                         <option value="bio" class="bg-green-800 focus:outline-none">Biodegradowalne</option>
-                        <option value="baterie" class="focus:outline-none">baterie</option>
+                        <option value="baterie" class="focus:outline-none bg-purple-600">baterie</option>
                         <option value="leki" class="bg-red-700 focus:outline-none">
                             <p class="text-bold focus:outline-none">Lerstwa +</p>
                         </option>

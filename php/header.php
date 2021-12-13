@@ -105,7 +105,7 @@ $_SESSION['rememberMe'] = NULL; */
 
         <!-- nav bar -->
         <nav class="block relative w-max bg-transparent z-10 ml-auto mt-2 -mr-12 ">
-            <div class="openMenu"><i class="fa fa-bars dark:text-white text-green-500"></i></div>
+            <div class="openMenu"><i class="fa fa-bars dark:text-white text-green-400"></i></div>
             <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-indigo-700 flex flex-wrap gap-2 px-2 py-2">
                 <!-- darkmode switch -->
                 <div class="flex flex-row">
@@ -126,17 +126,17 @@ $_SESSION['rememberMe'] = NULL; */
                 $beg = "/"; //'/Konkurs4/php/';
                 ?>
                 <li class="flex justify-center rounded-3xl font-bold"><a href="index.php" class=" font-bold  w-full hover:text-white text-center dark:hover:bg-pink-500 hover:bg-indigo-500 
-                <?php if ($beg . 'index.php' == $URI) {echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-green-500 bg-white dark:bg-white border-2 dark:hover:text-white ';
+                <?php if ($beg . 'index.php' == $URI) {echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 bg-white dark:bg-white border-2 dark:hover:text-white ';
                 } ?>">Strona Główna</a></li>
 
-                <li class="flex justify-center rounded-3xl"><a href="mapa.php" class="hover:text-white  font-bold  w-full text-center dark:hover:bg-pink-500 hover:bg-indigo-500  <?php if ($beg . 'mapa.php' == $URI) {
-                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-green-500 bg-white dark:bg-white border-2 dark:hover:text-white ';
+                <li class="flex justify-center rounded-3xl"><a href="mapa.php" class="font-bold  w-full hover:text-white text-center dark:hover:bg-pink-500 hover:bg-indigo-500   <?php if ($beg . 'mapa.php' == $URI) {
+                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 bg-white dark:bg-white border-2 dark:hover:text-white ';
                                                                                                                                                     } ?>">Mapa Koszy</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class="hover:text-white  font-bold  w-full text-center dark:hover:bg-pink-500 hover:bg-indigo-500  <?php if ($beg . 'informacje.php' == $URI) {
-                                                                                                                                                            echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-green-500 bg-white dark:bg-white border-2 dark:hover:text-white ';
+                <li class="flex justify-center rounded-3xl"><a href="informacje.php" class="font-bold  w-full hover:text-white text-center dark:hover:bg-pink-500 hover:bg-indigo-500  <?php if ($beg . 'informacje.php' == $URI) {
+                                                                                                                                                            echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 dark:bg-white border-2 dark:hover:text-white ';
                                                                                                                                                         } ?>">Artykuły</a></li>
-                <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class="hover:text-white  font-bold  w-full text-center dark:hover:bg-pink-500 hover:bg-indigo-500  <?php if ($beg . 'tworcy.php' == $URI) {
-                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-green-500 bg-white dark:bg-white border-2 dark:hover:text-white ';
+                <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class="font-bold  w-full hover:text-white text-center dark:hover:bg-pink-500 hover:bg-indigo-500  <?php if ($beg . 'tworcy.php' == $URI) {
+                                                                                                                                                        echo 'text-blue-400 bg-white dark:text-pink-500 dark:hover:bg-blue-500  border-2 dark:hover:text-white ';
                                                                                                                                                     } ?>">Autorzy</a></li>
 
                 <script src="./js/index.js"></script>

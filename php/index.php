@@ -6,9 +6,31 @@ require_once("header.php");
 
 
 <!-- skaner -->
-<div class="my-3 w-80 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid border-gray-600">
+<div class="my-3 w-80 h-fit dark:bg-gray-700 dark:border-white border-4 rounded-2xl border-solid relative border-gray-600">
+    <!-- info -->
+<button data-modal-target="#modal"><i class="fas fa-info-circle text-3xl text-white absolute top-2 right-2 z-20"></i></button>
+    <div class="modal bg-green-500 dark:bg-gray-700  overflow-y-scroll" id="modal">
+        <div class="modal-header">
+            <div class="text-xl text-white font-bold py-0">Jak używać skanera?</div>
+            <button data-close-button class="close-button text-white">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h2 class="text-2xl text-white">1. Na czym polega działanie skanera?</h2>
+            <p class="mb-2 text-base text-white">Skaner służy do sprawdzenia do jakiego pojemnika należy wrzucić odpad.</p>
+            <h2 class="text-2xl text-white">2. Skanowanie</h2>
+            <p class="text-white">Aby zeskanować produkut :</p>
+
+            <ol class="pl-6 pt-1" style="list-style-type: decimal;">
+                <li class=" text-sm text-white"> Włącz kamere za pomocą niebieskiego przycisku</li>
+                <li class="text-sm text-white"> (Jeśli trzeba wybierz którą kamere chcesz użyć)</li>
+                <li class="text-sm text-white"> Przyłóż produkt kodem kreskowym do skanera </li>
+                <li class="text-sm text-white"> Po zeskanowaniu wyślij. W drugim okienku pojawią się informacje o tym produkcie.</li>
+            </ol>
+        </div>
+    </div>
+    <div id="overlay"></div>
     <!-- kamera -->
-    <video id="video" class="fill-current bg-gray-600 mb-2 rounded-xl max-h-60 h-60 border-4 border-gray-400"></video>
+    <video id="video" class="fill-current -mt-6 bg-gray-600 mb-2 rounded-xl max-h-60 h-60 border-4 border-gray-400 z-10"></video>
     <div class="flex justify-center gap-4">
         <!-- włącznik -->
         <label class="toggle" for="startvideo">
