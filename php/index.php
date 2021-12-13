@@ -8,8 +8,8 @@ require_once("header.php");
 <!-- skaner -->
 <div class="my-3 w-80 h-fit dark:bg-gray-700 bg-green-400 dark:border-white border-4 rounded-2xl border-solid relative border-gray-600">
     <!-- info -->
-<button data-modal-target="#modal"><i class="fas fa-info-circle text-3xl text-white absolute top-2 right-2 z-20"></i></button>
-    <div class="modal bg-green-500 dark:bg-gray-700  overflow-y-scroll" id="modal">
+    <button data-modal-target="#modal"><i class="fas fa-info-circle text-3xl text-white absolute top-2 right-10 z-10"></i></button>
+    <div class="modal bg-green-500 z-20 dark:bg-gray-700  overflow-y-scroll" id="modal">
         <div class="modal-header">
             <div class="text-xl text-white font-bold py-0">Jak używać skanera?</div>
             <button data-close-button class="close-button text-white">&times;</button>
@@ -28,7 +28,9 @@ require_once("header.php");
             </ol>
         </div>
     </div>
-    <div id="overlay"></div>
+    <div id="overlay" class="z-30"></div>
+
+
     <!-- kamera -->
     <video id="video" class="fill-current -mt-6 bg-gray-600 mb-2 rounded-xl max-h-60 h-60 border-4 border-gray-400 z-10"></video>
     <div class="flex justify-center gap-4">
@@ -47,7 +49,7 @@ require_once("header.php");
     <label class="flex flex-row mb-2 justify-center items-center flex-wrap">
 
         <!-- wpisywanie kodu  pattern="^[0-9]*$" -->
-        <input type="text" id="codeInput" class="bg-gray-500 mx-2 text-white h-8 w-48 focus:outline-none text-xl pl-3 rounded-md" min="12">
+        <input type="text" placeholder="Kod produktu" id="codeInput" class="bg-gray-500 mx-2 text-white h-8 w-48 focus:outline-none text-xl pl-3 rounded-md" min="12">
 
         <button id="submit" class="p-1 text-white bg-pink-500 text-xl justify-center flex rounded"><i class="far fa-paper-plane"></i></button>
     </label>
@@ -55,11 +57,11 @@ require_once("header.php");
 
 </div>
 <!-- informacje o produkcie -->
-<div id="productInfoEdit" class="relative my-3 flex flex-wrap gap-2 dark:bg-gray-700 bg-green-400 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-72 h-fit" style="display: none;">
+<div id="productInfoEdit" class="relative z-10 my-3 flex flex-wrap gap-2 dark:bg-gray-700 bg-green-400 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-80 h-fit" style="display: none;">
     <!-- NAZWA -->
     <input type="text" id="ProductnameE" class="w-full mb-2 bg-gray-500 text-white h-6 focus:outline-none text-md rounded-md pl-2">
 
-    <img id="ProductImageE" class=" h-60 w-60 justify-self-center rounded-tr-2xl mb-2 rounded-bl-2xl" src="" alt="">
+    <img id="ProductImageE" class=" h-72 w-72 justify-self-center rounded-tr-2xl mb-2 rounded-bl-2xl" src="" alt="">
     <input type="file" id="productImageEA" class="bg-gray-500 text-white" accept="image/png, image/gif, image/jpeg" />
     <!-- kod produktu(takie male) -->
     <label class="mt-2 w-full my-auto">
@@ -96,9 +98,9 @@ require_once("header.php");
     <!-- ZDJECIE -->
     <!-- NAZWA -->
     <h1 class="text-xl font-semibold mb-3 w-full text-center" id="Productname"></h1>
-    <img id="ProductImage" class="w-1/2 mr-2 h-1/2 rounded-tr-xl rounded-bl-2xl text-center text-white" src="" alt="Obraz się nie załadował">
+    <img id="ProductImage" class="w-full mr-2 h-full rounded-tr-xl rounded-bl-2xl text-center text-white" src="" alt="Obraz się nie załadował">
     <!-- kod produktu(takie male) -->
-    <label class="w-1/3">
+    <label class="w-full">
         <p class="inline text-xs dark:text-gray-400 text-white ">kod: </p>
         <p class="inline text-xs dark:text-gray-400 text-white" id="productInfoCode"></p>
 

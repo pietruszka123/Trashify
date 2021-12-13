@@ -266,7 +266,23 @@ var draw = new ol.interaction.Draw({
   type: "Point",
 });
 var point = false;
-initDraw();
+draw.on("drawend", function (e) {
+  //console.log(this);
+  //sendAddKosz(ol.proj.toLonLat(e.feature.getProperties().geometry.flatCoordinates));
+});
+var currentKosz = new Kosz();
+draw.on("drawstart", function (e) {
+  console.log(point);
+  if (point) {
+    var features = currentSource.getFeatures();
+    var lastFeature = features[features.length - 1];
+    currentSource.removeFeature(lastFeature);
+  }
+  point = true;
+  currentKosz.pos = ol.proj.toLonLat(e.feature.getProperties().geometry.flatCoordinates);
+  longitude.value = currentKosz.pos[0];
+  latitude.value = currentKosz.pos[1];
+});
 $("#add").change(function (e) {
   e.preventDefault();
   if (this.checked) {
@@ -369,25 +385,7 @@ function getStyle(color) {
     }),
   });
 }
-function initDraw() {
-  draw.on("drawend", function (e) {
-    //console.log(this);
-    //sendAddKosz(ol.proj.toLonLat(e.feature.getProperties().geometry.flatCoordinates));
-  });
-  var currentKosz = new Kosz();
-  draw.on("drawstart", function (e) {
-    console.log(point);
-    if (point) {
-      var features = currentSource.getFeatures();
-      var lastFeature = features[features.length - 1];
-      currentSource.removeFeature(lastFeature);
-    }
-    point = true;
-    currentKosz.pos = ol.proj.toLonLat(e.feature.getProperties().geometry.flatCoordinates);
-    longitude.value = currentKosz.pos[0];
-    latitude.value = currentKosz.pos[1];
-  });
-}
+
 //INFO
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");

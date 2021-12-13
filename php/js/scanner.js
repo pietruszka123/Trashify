@@ -107,7 +107,7 @@ window.addEventListener("load", function () {
   function GetProduct(code) {
     $.ajax({
       type: "post",
-      url: "/api/getProduct.json",
+      url: "/apiv2.1.3.7/getter.php",
       data: JSON.stringify({ productCode: code }),
       contentType: "application/json; charset=utf-8",
       dataType: "json",
@@ -133,13 +133,14 @@ window.addEventListener("load", function () {
         })
         .catch((err) => {
           console.error(err);
-          ShowError(err);
+          //ShowError(err);
         });
     } else {
       codeReader.reset();
     }
   });
   document.getElementById("submit").addEventListener("click", function (e) {
+    console.log("whyy");
     var code = document.getElementById("codeInput").value.trim();
     if (code.length >= 12) {
       if (currentP.data.productCode != code) {
@@ -151,7 +152,7 @@ window.addEventListener("load", function () {
   });
   $.ajax({
     type: "post",
-    url: "/api/getProduct.json",
+    url: "/apiv2.1.3.7/getter.php",
     data: JSON.stringify({ productCode: "random" }),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
@@ -197,7 +198,8 @@ window.addEventListener("load", function () {
           productCode: productInfoCodeE.value,
           productInfo: { name: ProductnameE.value.trim(), rec: recyclingE.value.trim(), packagingType: packagingTypeE.value.trim(), binType: Rec.value },
         };
-        if (!currentP.data.productInfo.image_url || !currentP.data.productInfo.image_url == productImageE.src) {
+        console.log(currentP);
+        if (!currentP.data.productInfo.image_url || currentP.data.productInfo.image_url != productImageE.src) {
           r.image = `${btoa(f)}`;
           //r.imageUpdate = true;
         } else {
@@ -224,7 +226,11 @@ window.addEventListener("load", function () {
     $("#productInfoEdit").show();
   });
   $("#cancelChanges").click(() => {
-    resetEdit();
+    document.getElementById("productImageEA").value = null;
+    document.getElementById("packagingTypeE").value = null;
+    document.getElementById("recyclingE").value = null;
+    document.getElementById("Rec").value = "mieszane";
+    document.getElementById("ProductnameE").value = "";
     $("#productInfo").show();
     $("#productInfoEdit").hide();
   });

@@ -18,6 +18,7 @@ function open() {}
 app.post("/getProduct.json", (req, res, next) => {
   req.socket.on("error", function () {});
   res.socket.on("error", function () {});
+
   if (req.body && req.body.productCode) {
     getProduct(req.body.productCode)
       .then((ret) => {

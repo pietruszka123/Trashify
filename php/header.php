@@ -44,7 +44,7 @@ $_SESSION['rememberMe'] = NULL; */
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -53,11 +53,11 @@ $_SESSION['rememberMe'] = NULL; */
     <link rel="stylesheet" href="css.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Recycling Duter</title>
+    <title>Trashify</title>
     <script src="./js/barcodeScanner.js"></script>
 </head>
 
-<body class="p-0 m-0 min-h-screen h-fit overflow-x-hidden dark:bg-gray-800 bg-indigo-700" >
+<body class="p-0 m-0 min-h-screen h-fit overflow-x-hidden dark:bg-gray-800 bg-indigo-700 dark">
     <header class="dark:bg-gray-900 dark:text-green-100 text-pink-300 h-16 w-screen items-center overflow-hidden flex gap-2">
         <!-- paprotka -->
         <svg class="h-16 w-16 ml-1" style="transform: scaleY(-1) rotate(180deg);" viewBox="0 0 1182 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
@@ -101,7 +101,7 @@ $_SESSION['rememberMe'] = NULL; */
             </g>
         </svg>
 
-        <h1 class="text-2xl py-0.5 float-left text-green-400 dark:text-blue-400 font-bold">Trash dooter</h1>
+        <h1 class="text-2xl py-0.5 float-left text-green-400 dark:text-blue-400 font-bold">Trashify</h1>
 
         <!-- nav bar -->
         <nav class="block relative w-max bg-transparent z-40 ml-auto mt-2 -mr-12 ">
@@ -109,13 +109,13 @@ $_SESSION['rememberMe'] = NULL; */
             <ul class="mainMenu m-3 rounded-2xl dark:bg-gray-900 bg-indigo-700 flex flex-wrap gap-2 px-2 py-2">
                 <!-- darkmode switch -->
                 <div class="flex flex-row">
-                    <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl mr-3 bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
+                    <!-- <button class=" self-end mb-2 mt-2 ml-3 w-12 h-6 md:w-12 md:h-6 rounded-2xl mr-3 bg-white flex transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
                         <div id="switch-toggle" class="w-6 h-6 md:w-7 flex self-center md:h-7 relative rounded-full transition duration-500 transform dark:bg-pink-500 bg-pink-400 -translate-x-2 p-1 text-white ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
                         </div>
-                    </button>
+                    </button> -->
                     <div class="closeMenu z-10 flex justify-self-end">
 
                         <i class="fa fa-times"></i>
@@ -126,18 +126,19 @@ $_SESSION['rememberMe'] = NULL; */
                 $beg = "/"; //'/Konkurs4/php/';
                 ?>
                 <li class="flex justify-center rounded-3xl font-bold"><a href="index.php" class=" font-bold  w-full hover:text-white text-center dark:hover:bg-pink-500 hover:bg-indigo-500 
-                <?php if ($beg . 'index.php' == $URI) {echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 bg-white dark:bg-white border-2 dark:hover:text-white ';
+                <?php if ($beg . 'index.php' == $URI) {
+                    echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 bg-white dark:bg-white border-2 dark:hover:text-white ';
                 } ?>">Strona Główna</a></li>
 
                 <li class="flex justify-center rounded-3xl"><a href="mapa.php" class="font-bold  w-full hover:text-white text-center dark:hover:bg-pink-500 hover:bg-indigo-500   <?php if ($beg . 'mapa.php' == $URI) {
-                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 bg-white dark:bg-white border-2 dark:hover:text-white ';
-                                                                                                                                                    } ?>">Mapa Koszy</a></li>
+                                                                                                                                                                                        echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 bg-white dark:bg-white border-2 dark:hover:text-white ';
+                                                                                                                                                                                    } ?>">Mapa Koszy</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="informacje.php" class="font-bold  w-full hover:text-white text-center dark:hover:bg-pink-500 hover:bg-indigo-500  <?php if ($beg . 'informacje.php' == $URI) {
-                                                                                                                                                            echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 dark:bg-white border-2 dark:hover:text-white ';
-                                                                                                                                                        } ?>">Artykuły</a></li>
+                                                                                                                                                                                            echo 'dark:text-pink-500 dark:hover:bg-blue-500 text-blue-400 dark:bg-white border-2 dark:hover:text-white ';
+                                                                                                                                                                                        } ?>">Artykuły</a></li>
                 <li class="flex justify-center rounded-3xl"><a href="tworcy.php" class="font-bold  w-full hover:text-white text-center dark:hover:bg-pink-500 hover:bg-indigo-500  <?php if ($beg . 'tworcy.php' == $URI) {
-                                                                                                                                                        echo 'text-blue-400 bg-white dark:text-pink-500 dark:hover:bg-blue-500  border-2 dark:hover:text-white ';
-                                                                                                                                                    } ?>">Autorzy</a></li>
+                                                                                                                                                                                        echo 'text-blue-400 bg-white dark:text-pink-500 dark:hover:bg-blue-500  border-2 dark:hover:text-white ';
+                                                                                                                                                                                    } ?>">Autorzy</a></li>
 
                 <script src="./js/index.js"></script>
 
@@ -187,6 +188,6 @@ $_SESSION['rememberMe'] = NULL; */
         </svg>
     </header>
     <!-- gradientowa linia -->
-    <div class="w-screen h-1 top-0 to-pink-400 bg-gradient-to-r dark:from-blue-500 from-green-400"></div>
+    <div class="w-screen h-2 top-0 to-pink-400 bg-gradient-to-r dark:from-blue-500 from-green-400"></div>
     <!-- container -->
     <div class="justify-evenly min-h-screen h-full w-screen p-5 dark:bg-gray-800 text-pink-300 pink dark:text-gray-200 flex flex-wrap ">
