@@ -163,6 +163,7 @@ class geo {
     );
   }
   start() {
+    console.log("start?");
     source.addFeature(this.positionFeature);
     source.addFeature(this.accuracyFeature);
   }
@@ -387,83 +388,40 @@ function initDraw() {
     latitude.value = currentKosz.pos[1];
   });
 }
-// document.getElementById("type").addEventListener("change", function () {
-//   console.log("?");
-//   map.removeInteraction(draw);
-//   switch (this.value) {
-//     case "mieszane":
-//       draw = new ol.interaction.Draw({
-//         source: currentSource,
-//         type: "Point",
-//         style: getStyle("#000000"),
-//       });
+//INFO
+const openModalButtons = document.querySelectorAll("[data-modal-target]");
+const closeModalButtons = document.querySelectorAll("[data-close-button]");
+const overlay = document.getElementById("overlay");
 
-//       break;
-//     case "plastik":
-//       draw = new ol.interaction.Draw({
-//         source: currentSource,
-//         type: "Point",
-//         style: getStyle("#fde047"),
-//       });
-//       break;
-//     case "papier":
-//       draw = new ol.interaction.Draw({
-//         source: currentSource,
-//         type: "Point",
-//         style: getStyle("#1e40af"),
-//       });
-//       break;
-//     case "szklo":
-//       draw = new ol.interaction.Draw({
-//         source: currentSource,
-//         type: "Point",
-//         style: getStyle("#16a34a"),
-//       });
-//       break;
-//     case "bio":
-//       draw = new ol.interaction.Draw({
-//         source: currentSource,
-//         type: "Point",
-//         style: getStyle("#713f12"),
-//       });
-//     case "baterie":
-//       draw = new ol.interaction.Draw({
-//         source: currentSource,
-//         type: "Point",
-//         style: new ol.style.Style({
-//           image: new ol.style.Icon({
-//             color: "#ffffff",
-//             crossOrigin: "anonymous",
-//             imgSize: [20, 20],
-//             src: "img/baterie.svg",
-//           }),
-//         }),
-//       });
+openModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = document.querySelector(button.dataset.modalTarget);
+    openModal(modal);
+  });
+});
 
-//       break;
-//     case "leki":
-//       draw = new ol.interaction.Draw({
-//         source: currentSource,
-//         type: "Point",
-//         style: new ol.style.Style({
-//           image: new ol.style.Icon({
-//             color: "#ffffff",
-//             crossOrigin: "anonymous",
-//             imgSize: [20, 20],
-//             src: "img/leki.svg",
-//           }),
-//         }),
-//       });
+overlay.addEventListener("click", () => {
+  const modals = document.querySelectorAll(".modal.active");
+  modals.forEach((modal) => {
+    closeModal(modal);
+  });
+});
 
-//       break;
-//     default:
-//       draw = new ol.interaction.Draw({
-//         source: currentSource,
-//         type: "Point",
-//         style: getStyle("#ff0000"),
-//       });
-//       break;
-//   }
-//   map.addInteraction(draw);
-//   initDraw();
-// });
+closeModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".modal");
+    closeModal(modal);
+  });
+});
+
+function openModal(modal) {
+  if (modal == null) return;
+  modal.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function closeModal(modal) {
+  if (modal == null) return;
+  modal.classList.remove("active");
+  overlay.classList.remove("active");
+}
