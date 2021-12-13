@@ -1,4 +1,11 @@
 var currentP = null;
+function ShowError(err) {
+  $("#errorMessageS").text(err);
+  $("#errorMessageS").show();
+  setTimeout(() => {
+    $("#errorMessageS").hide();
+  }, 5000);
+}
 window.addEventListener("load", function () {
   var EditMode = false;
   let selectedDeviceId;
@@ -75,7 +82,7 @@ window.addEventListener("load", function () {
     productInfoCode.textContent = response.data.productCode;
     if (response.data.image && response.data.image.length != 0) {
       ProductImage.src = `data:image/png;base64,${response.data.image}`;
-      document.getElementById("ProductImageE").src = `data:image/png;base64,${response.image}`;
+      document.getElementById("ProductImageE").src = `data:image/png;base64,${response.data.image}`;
     } else {
       ProductImage.src = response.data.productInfo.image_url;
       document.getElementById("ProductImageE").src = response.data.productInfo.image_url;
@@ -105,6 +112,7 @@ window.addEventListener("load", function () {
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       success: function (response) {
+        $("#ExampleP").hide();
         console.log(response);
         console.log(response.data);
         setInfo(response);
@@ -125,6 +133,7 @@ window.addEventListener("load", function () {
         })
         .catch((err) => {
           console.error(err);
+          ShowError(err);
         });
     } else {
       codeReader.reset();
@@ -132,12 +141,18 @@ window.addEventListener("load", function () {
   });
   document.getElementById("submit").addEventListener("click", function (e) {
     var code = document.getElementById("codeInput").value.trim();
-    GetProduct(code);
+    if (code.length >= 12) {
+      if (currentP.data.productCode != code) {
+        GetProduct(code);
+      }
+    } else {
+      ShowError("kod produktu musi mieć przynajmniej 12 znaków");
+    }
   });
   $.ajax({
     type: "post",
     url: "/api/getProduct.json",
-    data: JSON.stringify({ productCode: "3502110009357" }),
+    data: JSON.stringify({ productCode: "random" }),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function (response) {

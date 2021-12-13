@@ -15,7 +15,7 @@ $mysqli->close();
 function GetRANDOM()
 {
     global $mysqli;
-    $sql = "SELECT * FROM products ORDER BY RAND() LIMIT 1";
+    $sql = "SELECT * FROM products WHERE  productImage is not null Or JSON_VALUE(productInfo,'$.image_url') is not null ORDER BY RAND() LIMIT 1";
     $r = ["status" => false];
     if ($stmt = $mysqli->prepare($sql)) {
         if ($stmt->execute()) {
@@ -24,7 +24,9 @@ function GetRANDOM()
             if (isset($row)) {
                 $r["status"] = true;
                 $r["data"] =  $row;
+                unset($r["data"]["productImage"]);
                 $r["data"]["productInfo"] = json_decode($row["productInfo"]);
+                $r["data"]["image"] = base64_encode($row["productImage"]);
             }
         }
     }

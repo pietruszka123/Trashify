@@ -25,9 +25,11 @@ require_once("header.php");
     <label class="flex flex-row mb-2 justify-center items-center flex-wrap">
 
         <!-- wpisywanie kodu  pattern="^[0-9]*$" -->
-        <input type="text" id="codeInput" class="bg-gray-500 mx-2 text-white h-8 w-48 focus:outline-none text-xl pl-3 rounded-md">
+        <input type="text" id="codeInput" class="bg-gray-500 mx-2 text-white h-8 w-48 focus:outline-none text-xl pl-3 rounded-md" min="12">
+
         <button id="submit" class="p-1 text-white bg-pink-500 text-xl justify-center flex rounded"><i class="far fa-paper-plane"></i></button>
     </label>
+    <p id="errorMessageS" class="w-full text-center text-red-600 text-2xl" style="display: none;">test</p>
 
 </div>
 <!-- informacje o produkcie -->
@@ -68,6 +70,7 @@ require_once("header.php");
 
 
 <div id="productInfo" class="relative my-3 flex flex-wrap gap-0 dark:bg-gray-700 p-4 border-4 border-solid dark:border-white rounded-2xl border-gray-600 w-72 h-fit">
+    <p id="ExampleP" class="w-full text-center text-2xl font-bold">Przykładowy Produkt</p>
     <!-- ZDJECIE -->
     <!-- NAZWA -->
     <h1 class="text-xl font-semibold mb-3 w-full text-center" id="Productname"></h1>
