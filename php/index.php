@@ -45,6 +45,7 @@ require_once("header.php");
 
         </select>
     </div>
+    
     <!-- ręczny skan -->
     <label class="flex flex-row mb-2 justify-center items-center flex-wrap">
 
